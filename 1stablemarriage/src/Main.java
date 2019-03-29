@@ -9,7 +9,7 @@ class Main {
 
 	    CoupleParser reader = new CoupleParser();
 
-	    reader.parse();
+	    reader.parse(args[0]);
 
         Set<Man> men = reader.getMen();
         Set<Woman> women = reader.getWoman();
