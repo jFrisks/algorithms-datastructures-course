@@ -1,7 +1,22 @@
+import persons.Man;
+import persons.Woman;
+
+import java.util.Set;
+
 class Main {
 	
 	public static void main(String[] args) {
-		System.out.println("This is a test");	
+
+	    CoupleParser reader = new CoupleParser();
+
+	    reader.parse();
+
+        Set<Man> men = reader.getMen();
+        Set<Woman> women = reader.getWoman();
+
+        Matcher.GS(women, men);
+
+        reader.printCouples(women);
 	}
 
 }
