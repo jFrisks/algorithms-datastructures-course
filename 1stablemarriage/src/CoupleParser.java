@@ -24,11 +24,11 @@ public class CoupleParser {
         }
 
         //get all strings
-        int[] linesplit;
-        linesplit = Arrays.stream(stringBuilder.toString().split(" ")).mapToInt(str -> Integer.parseInt(str)).toArray();
+        int[] personArray;
+        personArray = Arrays.stream(stringBuilder.toString().split(" ")).mapToInt(str -> Integer.parseInt(str)).toArray();
 
         //First int = How many persons per gender
-        N = linesplit[0];
+        N = personArray[0];
 
         //All other ints - (N+1)*2N
         /* Vi tänker allt som en rekatngel
@@ -39,23 +39,41 @@ public class CoupleParser {
         * .......... */
 
         for(int i = 1; i <= (N+1)*2*N; i = i+N+1){
+            int mainID = personArray[i];
 
-            if (!women.containsKey(i)) {
-                Woman theWoman = women.put(i, new Woman(i));
+            //När kvinnan ej finns
+            if (!women.containsKey(mainID)) {
+                Woman theWoman = new Woman(mainID);
+                women.put(mainID, theWoman);
 
                 //SKAPA PREFERENSERNA
                 for(int j=1; j < N+1; j++){
+                    int prefID = personArray[i+j];
 
-                    Man theMan = men.getOrDefault(i + j, men.put(i + j, new Man(i + j)));
-                    theMan.addPrefByWoman(theWoman, j);
+                    Man theMan = men.get(prefID);
+                    if(theMan == null){
+                        theMan = new Man(prefID, N);
+                        men.put(prefID, theMan);
+                    }
+                    theMan.addPrefByWoman(theWoman,j-1);
                 }
             } else {
+                //Om kvinnan redan parsats
+                Man theMan = men.get(mainID);
+                if(theMan == null){
+                    theMan = new Man(mainID, N);
+                    men.put(mainID, theMan);
+                }
 
-                Man theMan = men.getOrDefault(i, men.put(i, new Man(i)));
-
+                //fixar pref
                 for(int j=1; j < N+1; j++){
+                    int prefID = personArray[i+j];
 
-                    Woman theWoman = women.getOrDefault(i + j, women.put(i + j, new Woman(i + j)));
+                    Woman theWoman = women.get(prefID);
+                    if(theWoman == null){
+                        theWoman = new Woman(prefID);
+                        women.put(prefID, theWoman);
+                    }
                     theMan.addToPref(theWoman);
                 }
 

@@ -8,10 +8,11 @@ public class Man {
 
     int ID;
     Stack<Woman> prefList;
-    List<Integer> prefferedByWomenList = new ArrayList<>();
+    List<Integer> prefferedByWomenList;
 
-    public Man(int ID) {
+    public Man(int ID, int Nsize) {
         this.ID = ID;
+        this.prefferedByWomenList = new ArrayList<>(Nsize);
     }
 
     public int getID() {
@@ -31,7 +32,7 @@ public class Man {
     }
 
     public void addPrefByWoman(Woman woman, int place) {
-        //TODO: maybe a List<Woman> instead?
+        //TODO: Problem is that prefferedBywomen is placing el on index id. The array is initlly empty which will cause trouble. We need to prefill it or use array :)
         int id = woman.getID();
         prefferedByWomenList.add(id, place);
     }
