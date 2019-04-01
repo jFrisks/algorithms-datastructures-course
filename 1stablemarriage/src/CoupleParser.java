@@ -4,14 +4,16 @@ import persons.Woman;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.IntStream;
 
 public class CoupleParser {
     int N = 0;
-    Set<Man> men = new HashSet<Man>();
-    Set<Woman> women = new HashSet<Woman>();
+    Map<Integer, Man> men = new HashMap<>();
+    Map<Integer, Woman> women = new HashMap<>();
 
     public void parse(String filepath) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filepath));
@@ -22,9 +24,6 @@ public class CoupleParser {
 
         //First int = How many persons per gender
         N = linesplit[0];
-
-        //Set with all strings of women we have created. Next should be man.
-        Set<Integer> createdWomen = new HashSet<Integer>();
 
         //All other ints - (N+1)*2N
         /* Vi tänker allt som en rekatngel
@@ -37,6 +36,7 @@ public class CoupleParser {
         for(int i = 1; i <= (N+1)*2*N; i = i+N+1){
 
             //SKAPA MAN ELLER KVINNA
+
             if(!createdWomen.contains(i)){
                 //skapa kvinna och markera som skapad.
                 Woman newWoman = new Woman(i);
