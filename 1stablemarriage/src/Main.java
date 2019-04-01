@@ -1,6 +1,7 @@
 import persons.Man;
 import persons.Woman;
 
+import java.io.IOException;
 import java.util.Set;
 
 class Main {
@@ -9,14 +10,18 @@ class Main {
 
 	    CoupleParser reader = new CoupleParser();
 
-	    reader.parse(args[0]);
+        try {
+            reader.parse(args[0]);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         Set<Man> men = reader.getMen();
         Set<Woman> women = reader.getWoman();
 
         Matcher.GS(women, men);
 
-        reader.printCouples(women);
+        Matcher.printCouples(women);
 	}
 
 }

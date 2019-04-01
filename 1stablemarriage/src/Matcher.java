@@ -34,4 +34,17 @@ public class Matcher {
 
     }
 
+    public static void printCouples(Set<Woman> women) {
+
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Woman woman : women) {
+
+            stringBuilder.append(woman.getID());
+            stringBuilder.append("  ");
+            stringBuilder.append(woman.getPartner().getID());
+            stringBuilder.append("\n");
+
+        }
+    }
+
 }

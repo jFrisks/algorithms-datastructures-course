@@ -16,4 +16,8 @@ public class Woman {
     public void setPartner(Man partner) {
         this.partner = partner;
     }
+
+    public int getID() {
+        return ID;
+    }
 }

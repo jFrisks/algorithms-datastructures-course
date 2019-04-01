@@ -4,10 +4,7 @@ import persons.Woman;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.IntStream;
 
 public class CoupleParser {
@@ -18,9 +15,17 @@ public class CoupleParser {
     public void parse(String filepath) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filepath));
 
+        StringBuilder stringBuilder = new StringBuilder();
+
+        String line;
+
+        while ((line = br.readLine()) != null) {
+            stringBuilder.append(line);
+        }
+
         //get all strings
         int[] linesplit;
-        linesplit = br.lines().mapToInt(str -> Integer.parseInt(str)).toArray();
+        linesplit = Arrays.stream(stringBuilder.toString().split(" ")).mapToInt(str -> Integer.parseInt(str)).toArray();
 
         //First int = How many persons per gender
         N = linesplit[0];
@@ -35,31 +40,26 @@ public class CoupleParser {
 
         for(int i = 1; i <= (N+1)*2*N; i = i+N+1){
 
-            //SKAPA MAN ELLER KVINNA
-
-            if(!createdWomen.contains(i)){
-                //skapa kvinna och markera som skapad.
-                Woman newWoman = new Woman(i);
-                women.add(newWoman);
-                createdWomen.add(i);
+            if (!women.containsKey(i)) {
+                Woman theWoman = women.put(i, new Woman(i));
 
                 //SKAPA PREFERENSERNA
                 for(int j=1; j < N+1; j++){
-                    //Hitta mannen (linesplit[i+j]) - kalla han theMan - annars skapa  ny
-                    //theMan.setPrefByWoman(newWoman)
-                }
-            }else{
-                //TODO: skapa man, men ta ej hand om den ej finns
-                Man theMan = getManOrCreate(i);
 
-                //lägg in pref
+                    Man theMan = men.getOrDefault(i + j, men.put(i + j, new Man(i + j)));
+                    theMan.addPrefByWoman(theWoman, j);
+                }
+            } else {
+
+                Man theMan = men.getOrDefault(i, men.put(i, new Man(i)));
+
                 for(int j=1; j < N+1; j++){
-                    //theMan.setPref(i+j)
+
+                    Woman theWoman = women.getOrDefault(i + j, women.put(i + j, new Woman(i + j)));
+                    theMan.addToPref(theWoman);
                 }
+
             }
-
-
-
         }
 
 
@@ -67,12 +67,12 @@ public class CoupleParser {
 
     }
 
-    public Set<Man> getMen() {
+    public Set<Man> getMen(){
+        return new HashSet<Man>(men.values());
     }
 
     public Set<Woman> getWoman() {
+        return new HashSet<Woman>(women.values());
     }
 
-    public void printCouples(Set<Woman> women) {
-    }
 }
