@@ -15,18 +15,20 @@ public class CoupleParser {
     public void parse(String filepath) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader(filepath));
 
+        //How many persons
         N = Integer.parseInt(br.readLine());
 
+        //Loop all persons
         for(int i = 0; i < 2*N; i++){
             Woman woman = null;
 
             String line = br.readLine();
             String[] linesplit = line.split(" ");
-            int first = linesplit[0];
+
+            int first = Integer.parseInt(linesplit[0]);
             if(woman == null) {
                 woman = new Woman(first);
             }else {
-
             }
 
 
