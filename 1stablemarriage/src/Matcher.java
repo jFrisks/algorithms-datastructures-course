@@ -1,7 +1,5 @@
-import persons.Man;
-import persons.Woman;
-
 import java.util.*;
+import java.util.stream.Stream;
 
 public class Matcher {
 
@@ -38,14 +36,8 @@ public class Matcher {
     public static String printCouples(Set<Woman> women) {
 
         StringBuilder stringBuilder = new StringBuilder();
-        for (Woman woman : women) {
 
-            stringBuilder.append(woman.getID());
-            stringBuilder.append(" ");
-            Man man = woman.getPartner();
-            stringBuilder.append(man.getID());
-            stringBuilder.append("\n");
-        }
+        women.stream().sorted((w1, w2) -> w1.getID()-w2.getID()).forEach(x -> stringBuilder.append(x.getPartner().getID() + "\n"));
 
         return stringBuilder.toString();
     }

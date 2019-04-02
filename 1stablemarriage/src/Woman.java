@@ -1,5 +1,3 @@
-package persons;
-
 public class Woman {
 
     int ID;

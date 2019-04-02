@@ -1,9 +1,6 @@
-import persons.Man;
-import persons.Woman;
-
 import java.io.BufferedReader;
-import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.*;
 
 public class CoupleParser {
@@ -14,8 +11,8 @@ public class CoupleParser {
     int[][] menArr;
     int[][] womArr;
 
-    public void parse(String filepath) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader(filepath));
+    public void parse() throws IOException {
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringBuilder stringBuilder = new StringBuilder();
 

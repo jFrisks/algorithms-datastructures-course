@@ -1,6 +1,3 @@
-import persons.Man;
-import persons.Woman;
-
 import java.io.IOException;
 import java.util.Set;
 
@@ -11,7 +8,7 @@ class Main {
 	    CoupleParser reader = new CoupleParser();
 
         try {
-            reader.parse(args[0]);
+            reader.parse();
         } catch (IOException e) {
             e.printStackTrace();
         }

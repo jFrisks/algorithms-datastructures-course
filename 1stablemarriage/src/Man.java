@@ -1,5 +1,3 @@
-package persons;
-
 import java.util.*;
 
 public class Man {
