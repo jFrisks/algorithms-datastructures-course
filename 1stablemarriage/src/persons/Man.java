@@ -1,18 +1,15 @@
 package persons;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Stack;
+import java.util.*;
 
 public class Man {
 
     int ID;
-    Stack<Woman> prefList;
-    int[] prefferedByWomenList;
+    Stack<Woman> prefList = new Stack<>();
+    Map<Integer, Integer> map = new HashMap<>();
 
-    public Man(int ID, int Nsize) {
+    public Man(int ID) {
         this.ID = ID;
-        this.prefferedByWomenList = new int[2*Nsize];
     }
 
     public int getID() {
@@ -24,7 +21,7 @@ public class Man {
     }
 
     public int getAtIndex(Woman w) {
-        return prefferedByWomenList[w.ID];
+        return map.get(w.getID());
     }
 
     public void setWomanPrefList(Stack<Woman> prefList){
@@ -35,7 +32,7 @@ public class Man {
         //TODO: Problem is that prefferedBywomen is placing el on index id. The array is initlly empty which will cause trouble. We need to prefill it or use array :)
         //TODO: Also we should invert this array :)
         int id = woman.getID();
-        prefferedByWomenList[id] = place;
+        map.put(id, place);
     }
 
     @Override
@@ -47,4 +44,12 @@ public class Man {
         prefList.push(woman);
     }
 
+    @Override
+    public String toString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append("id: " + getID() + "\n");
+        stringBuilder.append("Pref: " + prefList.toString() + "\n");
+        stringBuilder.append("PrefB: " + map.toString() + "\n");
+        return stringBuilder.toString();
+    }
 }

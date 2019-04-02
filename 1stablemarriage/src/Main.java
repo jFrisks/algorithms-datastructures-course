@@ -21,7 +21,8 @@ class Main {
 
         Matcher.GS(women, men);
 
-        Matcher.printCouples(women);
+        String string = Matcher.printCouples(women);
+        System.out.println(string);
 	}
 
 }
