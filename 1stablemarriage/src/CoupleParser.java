@@ -18,9 +18,8 @@ public class CoupleParser {
         StringBuilder stringBuilder = new StringBuilder();
 
         String line;
-
         while ((line = br.readLine()) != null) {
-            stringBuilder.append(line);
+            stringBuilder.append(line + " ");
         }
 
         //get all strings

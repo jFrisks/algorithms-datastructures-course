@@ -8,11 +8,11 @@ public class Man {
 
     int ID;
     Stack<Woman> prefList;
-    List<Integer> prefferedByWomenList;
+    int[] prefferedByWomenList;
 
     public Man(int ID, int Nsize) {
         this.ID = ID;
-        this.prefferedByWomenList = new ArrayList<>(Nsize);
+        this.prefferedByWomenList = new int[2*Nsize];
     }
 
     public int getID() {
@@ -24,7 +24,7 @@ public class Man {
     }
 
     public int getAtIndex(Woman w) {
-        return prefferedByWomenList.get(w.ID);
+        return prefferedByWomenList[w.ID];
     }
 
     public void setWomanPrefList(Stack<Woman> prefList){
@@ -33,8 +33,9 @@ public class Man {
 
     public void addPrefByWoman(Woman woman, int place) {
         //TODO: Problem is that prefferedBywomen is placing el on index id. The array is initlly empty which will cause trouble. We need to prefill it or use array :)
+        //TODO: Also we should invert this array :)
         int id = woman.getID();
-        prefferedByWomenList.add(id, place);
+        prefferedByWomenList[id] = place;
     }
 
     @Override
