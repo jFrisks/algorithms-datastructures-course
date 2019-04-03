@@ -24,10 +24,10 @@ public class Matcher {
 
                 w.setPartner(m);
 
-                p.addLast(dumped);
+                p.push(dumped);
 
             } else {
-                p.addLast(m);
+                p.push(m);
             }
         }
 
