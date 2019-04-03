@@ -3,7 +3,7 @@ import java.util.*;
 public class Man {
 
     int ID;
-    Stack<Woman> prefList = new Stack<>();
+    Deque<Woman> prefList = new ArrayDeque<>();
 
     public Man(int ID) {
         this.ID = ID;
@@ -34,7 +34,7 @@ public class Man {
     }
 
     public void addToPref(Woman woman) {
-        prefList.push(woman);
+        prefList.addLast(woman);
     }
 
     @Override

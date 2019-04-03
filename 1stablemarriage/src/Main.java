@@ -6,8 +6,8 @@ class Main {
 	public static void main(String[] args) throws FileNotFoundException {
 
 	    CoupleParser reader = new CoupleParser();
-        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedReader br = new BufferedReader(new FileReader("/Users/Jonte/Google Drive/UNIVERSITET - LUND/Civilingenjör - Utbildningen/Kurser/AlgoDat/Labbar/algorithms-datastructures-course/1stablemarriage/data/secret/0testsmall.in"));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        //BufferedReader br = new BufferedReader(new FileReader("/Users/Jonte/Google Drive/UNIVERSITET - LUND/Civilingenjör - Utbildningen/Kurser/AlgoDat/Labbar/algorithms-datastructures-course/1stablemarriage/data/sample/1.in"));
 
         try {
             reader.parse(br);

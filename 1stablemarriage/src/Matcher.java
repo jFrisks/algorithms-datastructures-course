@@ -5,27 +5,19 @@ public class Matcher {
 
     public static void GS(Set<Woman>  women, Set<Man> men) {
 
-        Deque<Man> p = new ArrayDeque<Man>();
-        p.addAll(men);
+        Deque<Man> p = new ArrayDeque<Man>(men);
 
         while(!p.isEmpty()) {
 
             Man m = p.pop();
-
             Woman w = m.getFirstWoman();
 
             if (w.getPartner() == null) {
-
                 w.setPartner(m);
-
-            } else if (w.getManPlacement(w.getPartner().getID()) - w.getManPlacement(m.getID()) > 0) {
-
+            } else if (w.getManPlacement(m.getID()) < w.getManPlacement(w.getPartner().getID())) {
                 Man dumped = w.getPartner();
-
                 w.setPartner(m);
-
                 p.addLast(dumped);
-
             } else {
                 p.addLast(m);
             }
@@ -41,9 +33,9 @@ public class Matcher {
 
         //women.stream().forEach(x -> stringBuilder.append(x.getID() + "  " + x.getPartner().getID()));
         women.stream().sorted(
-                Comparator.comparingInt(w2 -> w2.getPartner().getID())
+                Comparator.comparingInt(w1 -> w1.getID())
         ).forEach(w ->
-                stringBuilder.append(w.getPartner().getID() + " " + w.getID() + "\n")
+                stringBuilder.append(w.getID() + " " + w.getPartner().getID() + "\n")
         );
 
         return stringBuilder.toString();
