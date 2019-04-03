@@ -18,16 +18,16 @@ public class Matcher {
 
                 w.setPartner(m);
 
-            } else if ((w.getPartner().getAtIndex(w) - m.getAtIndex(w)) > 0) {
+            } else if (w.getManPlacement(w.getPartner().getID()) - w.getManPlacement(m.getID()) > 0) {
 
                 Man dumped = w.getPartner();
 
                 w.setPartner(m);
 
-                p.push(dumped);
+                p.addLast(dumped);
 
             } else {
-                p.push(m);
+                p.addLast(m);
             }
         }
 

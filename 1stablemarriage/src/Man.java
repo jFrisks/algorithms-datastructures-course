@@ -4,7 +4,6 @@ public class Man {
 
     int ID;
     Stack<Woman> prefList = new Stack<>();
-    Map<Integer, Integer> map = new HashMap<>();
 
     public Man(int ID) {
         this.ID = ID;
@@ -18,20 +17,16 @@ public class Man {
         return prefList.pop();
     }
 
-    public int getAtIndex(Woman w) {
+    /*public int getAtIndex(Woman w) {
         return map.get(w.getID());
-    }
+    }*/
 
-    public void setWomanPrefList(Stack<Woman> prefList){
-        this.prefList = prefList;
-    }
-
-    public void addPrefByWoman(Woman woman, int place) {
+    /*public void addPrefByWoman(Woman woman, int place) {
         //TODO: Problem is that prefferedBywomen is placing el on index id. The array is initlly empty which will cause trouble. We need to prefill it or use array :)
         //TODO: Also we should invert this array :)
         int id = woman.getID();
         map.put(id, place);
-    }
+    }*/
 
     @Override
     public boolean equals(Object obj) {
@@ -47,7 +42,6 @@ public class Man {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append("id: " + getID() + "\n");
         stringBuilder.append("Pref: " + prefList.toString() + "\n");
-        stringBuilder.append("PrefB: " + map.toString() + "\n");
         return stringBuilder.toString();
     }
 }

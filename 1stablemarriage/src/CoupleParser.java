@@ -92,10 +92,9 @@ public class CoupleParser {
         //create pref for women in men
         for (int i = 0; i < womArr.length; i++) {
             for (int j = 1; j < womArr[i].length; j++) {
-
                 Man man = men.get(womArr[i][j]);
                 Woman woman = women.get(womArr[i][0]);
-                man.addPrefByWoman(woman, j);
+                woman.addToPref(man.ID, j);
             }
         }
 
