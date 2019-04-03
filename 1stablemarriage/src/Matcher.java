@@ -37,7 +37,7 @@ public class Matcher {
 
         StringBuilder stringBuilder = new StringBuilder();
 
-        women.stream().sorted((w1, w2) -> w1.getID()-w2.getID()).forEach(x -> stringBuilder.append(x.getPartner().getID() + "\n"));
+        women.stream().sorted((w1, w2) -> w2.getID()-w1.getID()).forEach(x -> stringBuilder.append(x.getPartner().getID() + "\n"));
 
         return stringBuilder.toString();
     }
