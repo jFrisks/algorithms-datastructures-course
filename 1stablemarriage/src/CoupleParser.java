@@ -11,8 +11,7 @@ public class CoupleParser {
     int[][] menArr;
     int[][] womArr;
 
-    public void parse() throws IOException {
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    public void parse(BufferedReader br) throws IOException {
 
         StringBuilder stringBuilder = new StringBuilder();
 
