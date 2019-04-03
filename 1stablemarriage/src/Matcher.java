@@ -39,7 +39,12 @@ public class Matcher {
 
         //women.stream().sorted((w1, w2) -> w2.getID()-w1.getID()).forEach(x -> stringBuilder.append(x.getPartner().getID() + "\n"));
 
-        women.stream().forEach(x -> stringBuilder.append(x.getID() + "  " + x.getPartner().getID()));
+        //women.stream().forEach(x -> stringBuilder.append(x.getID() + "  " + x.getPartner().getID()));
+        women.stream().sorted(
+                Comparator.comparingInt(w2 -> w2.getPartner().getID())
+        ).forEach(w ->
+                stringBuilder.append(w.getPartner().getID() + " " + w.getID() + "\n")
+        );
 
         return stringBuilder.toString();
     }
