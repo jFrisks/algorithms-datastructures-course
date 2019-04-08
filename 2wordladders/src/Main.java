@@ -11,18 +11,18 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedReader br = new BufferedReader(new FileReader("/Users/eliasvernersson/IdeaProjects/algorithms-datastructures-course/2wordladders/data/secret/1small1.in"));
+        BufferedReader br = new BufferedReader(new FileReader("/Users/Jonte/Google Drive/UNIVERSITET - LUND/Civilingenjör - Utbildningen/Kurser/AlgoDat/Labbar/algorithms-datastructures-course/2wordladders/data/secret/5large1.in"));
 
 
         Parser parser = new Parser();
 
         parser.parse(br);
         Map<String, List<String>> graph = parser.getGraph();
-        Map<String, List<String>> startFinishPairs = parser.getStartFinishPairs();
+        List<Pairs> startFinishPairs = parser.getStartFinishPairs();
 
         BFS bfs = new BFS();
-        for(String start : startFinishPairs.keySet()){
-            startFinishPairs.get(start).forEach(finish -> System.out.println(start + " -> " + finish+ " " + bfs.run(graph, start, finish)));
+        for(Pairs pair : startFinishPairs){
+            System.out.println(pair.start + " -> " + pair.finish + " " + bfs.run(graph, pair.start, pair.finish));
         }
 
     }

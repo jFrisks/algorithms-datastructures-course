@@ -3,8 +3,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class Parser {
-    Set<String> words = new HashSet<>();
-    Map<String, List<String>> startFinishPairs = new HashMap<>();
+    List<String> words = new ArrayList<>();
+    List<Pairs> startFinishPairs = new ArrayList<>();
     Map<String, List<String>> graph = new HashMap<>();
 
     public void parse(BufferedReader br) throws IOException {
@@ -28,15 +28,7 @@ public class Parser {
         for(int j = 0; j < 2*graphRuns; j +=2){
             String start = inputArray[j+nWords+2];
             String finish = inputArray[j+nWords+2+1];
-
-            List<String> value = startFinishPairs.get(start);
-            if (value != null) {
-                value.add(finish);
-            } else {
-                value = new ArrayList<>();
-                startFinishPairs.put(start, value);
-                value.add(finish);
-            }
+            startFinishPairs.add(new Pairs(start, finish));
         }
 
         createGraph();
@@ -82,7 +74,7 @@ public class Parser {
         return graph;
     }
 
-    public Map<String, List<String>> getStartFinishPairs() {
+    public List<Pairs> getStartFinishPairs() {
         return startFinishPairs;
     }
 }
