@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
@@ -10,9 +7,9 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        BufferedReader br = new BufferedReader(new FileReader("/Users/Jonte/Google Drive/UNIVERSITET - LUND/Civilingenjör - Utbildningen/Kurser/AlgoDat/Labbar/algorithms-datastructures-course/2wordladders/data/secret/5large1.in"));
-
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        //BufferedReader br = new BufferedReader(new FileReader("/Users/Jonte/Google Drive/UNIVERSITET - LUND/Civilingenjör - Utbildningen/Kurser/AlgoDat/Labbar/algorithms-datastructures-course/2wordladders/data/secret/5large1.in"));
+        BufferedWriter out = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(java.io.FileDescriptor.out), "ASCII"), 512);
 
         Parser parser = new Parser();
 
@@ -22,8 +19,11 @@ public class Main {
 
         BFS bfs = new BFS();
         for(Pairs pair : startFinishPairs){
-            System.out.println(pair.start + " -> " + pair.finish + " " + bfs.run(graph, pair.start, pair.finish));
+            //out.write(pair.start + " -> " + pair.finish + " " + bfs.run(graph, pair.start, pair.finish));
+            out.write(bfs.run(graph, pair.start, pair.finish));
+            out.newLine();
+            //System.out.println(pair.start + " -> " + pair.finish + " " + bfs.run(graph, pair.start, pair.finish));
         }
-
+        out.flush();
     }
 }
