@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class BFS {
-    public String run(Map<String, List<String>> graph, String start, String finish){
+    public static String run(Map<String, List<String>> graph, String start, String finish){
         Map<String, Boolean> visited = new HashMap<>();
         Map<String, String> predecessor = new HashMap<>();
 
@@ -35,7 +35,7 @@ public class BFS {
         return "Nothing found";
     }
 
-    public int getPathLength(Map<String,String> predecessor, String start, String finish){
+    int getPathLength(Map<String,String> predecessor, String start, String finish){
         int count = 0;
 
         String next = predecessor.get(finish);
