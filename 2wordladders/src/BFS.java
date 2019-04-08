@@ -3,12 +3,6 @@ import java.util.*;
 
 public class BFS {
 
-    private BufferedReader bufferedReader;
-
-    public BFS(BufferedReader bufferedReader) {
-        this.bufferedReader = bufferedReader;
-    }
-
     public String run(Map<String, List<String>> graph, String start, String finish){
         Map<String, Boolean> visited = new HashMap<>();
         Map<String, String> predecessor = new HashMap<>();
