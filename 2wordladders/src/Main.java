@@ -14,11 +14,11 @@ public class Main {
 
         parser.parse(br);
         Map<String, List<String>> graph = Parser.getGraph();
-
-        //String start = Parser.getStart();
-        //String finish = Parser.getFinish();
+        Map<String, String> startFinishPars = parser.getStartFinishPairs();
 
         BFS bfs = new BFS();
-        bfs.run(graph, start, finish);
+        for(String start : startFinishPars.keySet()){
+            bfs.run(graph, start, startFinishPars.get(start));
+        }
     }
 }

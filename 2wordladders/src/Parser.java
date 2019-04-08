@@ -37,4 +37,7 @@ public class Parser {
         return null;
     }
 
+    public Map<String, String> getStartFinishPairs() {
+        return startFinishPairs;
+    }
 }
