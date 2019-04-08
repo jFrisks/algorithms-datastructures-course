@@ -25,16 +25,28 @@ public class BFS {
                     q.addLast(neighbour);
                     //predecessor(neighbour) = current;
                     predecessor.put(neighbour, current);
+                    if(current == finish){
+                        return String.valueOf(getPathLength(predecessor, start, finish));
+                    }
                 }
             }
         }
 
-        return "";
+        return "No found";
     }
 
-    public int getPathLength(){
+    public int getPathLength(Map<String,String> predecessor, String start, String finish){
+        int count = 0;
+
+        String next = predecessor.get(finish);
+        while(next != null){
+            count++;
+            if(next == start) return count;
+            next = predecessor.get(next);
+        }
         return -1;
     }
+
 
 
 }
