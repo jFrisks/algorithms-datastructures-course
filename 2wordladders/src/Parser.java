@@ -31,6 +31,23 @@ public class Parser {
             String finish = inputArray[j+nWords+2+1];
             startFinishPairs.put(start, finish);
         }
+
+        createGraph();
+    }
+
+    private void createGraph() {
+        for(String word1 : words){
+            List<String> word1Neihbours = new ArrayList<>();
+            for(String word2: words) {
+                if(hasedge(word1, word2)){
+                    word1Neihbours.add(word2);
+                }
+            }
+            graph.put(word1, word1Neihbours);
+        }
+    }
+
+    private boolean hasedge(String word1, String word2) {
     }
 
     public static Map<String, List<String>> getGraph() {
