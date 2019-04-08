@@ -35,7 +35,7 @@ public class BFS {
         return "Nothing found";
     }
 
-    int getPathLength(Map<String,String> predecessor, String start, String finish){
+    static int getPathLength(Map<String,String> predecessor, String start, String finish){
         int count = 0;
 
         String next = predecessor.get(finish);
