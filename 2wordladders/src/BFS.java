@@ -1,19 +1,19 @@
 import java.util.*;
 
 public class BFS {
-    public String run(Map<String, List<String>> graph, String s, String t){
+    public String run(Map<String, List<String>> graph, String start, String finish){
         Map<String, Boolean> visited = new HashMap<>();
         Map<String, String> predecessor = new HashMap<>();
 
         Deque<String> q = new ArrayDeque<String>();
-        q.addFirst(s);
+        q.addFirst(start);
 
         //Making every node unvisited except s
         for(String v: graph.keySet()){
             visited.put(v, false);
         }
 
-        visited.put(s, true);
+        visited.put(start, true);
 
         while(!q.isEmpty()){
             String current = q.pop();
