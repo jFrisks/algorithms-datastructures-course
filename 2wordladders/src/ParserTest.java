@@ -14,9 +14,23 @@ public class ParserTest {
 
     @Test
     public void testHasEdge() {
-        assertTrue(parser.hasedge("hello", "lolem"));
-        assertFalse("Not true", parser.hasedge("lolem", "hello"));
-        assertFalse("Not true" ,parser.hasedge("k", "test"));
+        assertTrue(parser.hasEdge("hello", "lolem"));
+        assertFalse("Not true", parser.hasEdge("lolem", "hello"));
+        assertFalse("Not true" ,parser.hasEdge("k", "test"));
     }
 
+    @Test
+    public void testContainedIn() {
+        String s1 = "ello";
+        String s2 = "lolem";
+
+        assertTrue("Should be contained in", parser.isContainedIn(s1.toCharArray(), s2.toCharArray()));
+        assertFalse("Should not be contained in", parser.isContainedIn(s2.toCharArray(), s1.toCharArray()));
+
+        s1 = "ello";
+        s2 = "loe";
+
+        assertFalse("Should not be contained in", parser.isContainedIn(s1.toCharArray(), s2.toCharArray()));
+        assertTrue("Should be contained in", parser.isContainedIn(s2.toCharArray(), s1.toCharArray()));
+    }
 }

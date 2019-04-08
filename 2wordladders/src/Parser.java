@@ -1,8 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.util.*;
-import java.util.function.IntFunction;
-import java.util.stream.BaseStream;
 
 public class Parser {
     Set<String> words = new HashSet<>();
@@ -48,7 +46,7 @@ public class Parser {
         for(String word1 : words){
             List<String> word1Neihbours = new ArrayList<>();
             for(String word2: words) {
-                if(hasedge(word1, word2)){
+                if(hasEdge(word1, word2)){
                     word1Neihbours.add(word2);
                 }
             }
@@ -56,12 +54,28 @@ public class Parser {
         }
     }
 
-    boolean hasedge(String word1, String word2) {
+    boolean hasEdge(String word1, String word2) {
         if (word1.length() < 2) return false;
-        for (int i = 1; i < word1.length(); i++) {
-            if(!(word2.contains(String.valueOf(word1.charAt(i))))) return false;
+        String word = word1.substring(1);
+        return isContainedIn(word.toCharArray(), word2.toCharArray());
+    }
+
+    boolean isContainedIn(char[] word1, char[] word2) {
+        boolean[] removed1 = new boolean[word1.length];
+        boolean[] removed2 = new boolean[word2.length];
+        int removedAmount = 0;
+        for (int i = 0; i < word1.length; i++) {
+            for (int j = 0; j < word2.length; j++) {
+                if (!removed1[i] && !removed2[j] && word1[i] == word2[j]) {
+                    removed1[i] = true;
+                    removed2[j] = true;
+                    removedAmount++;
+                }
+            }
         }
-        return true;
+
+        if (removedAmount == word1.length) return true;
+        else return false;
     }
 
     public Map<String, List<String>> getGraph() {
