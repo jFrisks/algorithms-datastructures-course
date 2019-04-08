@@ -25,14 +25,14 @@ public class BFS {
                     q.addLast(neighbour);
                     //predecessor(neighbour) = current;
                     predecessor.put(neighbour, current);
-                    if(current == finish){
+                    if(neighbour.matches(finish)){
                         return String.valueOf(getPathLength(predecessor, start, finish));
                     }
                 }
             }
         }
 
-        return "No found";
+        return "Nothing found";
     }
 
     public int getPathLength(Map<String,String> predecessor, String start, String finish){
