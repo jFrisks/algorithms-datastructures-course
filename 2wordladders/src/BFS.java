@@ -1,7 +1,15 @@
+import java.io.BufferedReader;
 import java.util.*;
 
 public class BFS {
-    public static String run(Map<String, List<String>> graph, String start, String finish){
+
+    private BufferedReader bufferedReader;
+
+    public BFS(BufferedReader bufferedReader) {
+        this.bufferedReader = bufferedReader;
+    }
+
+    public String run(Map<String, List<String>> graph, String start, String finish){
         Map<String, Boolean> visited = new HashMap<>();
         Map<String, String> predecessor = new HashMap<>();
 
@@ -35,7 +43,7 @@ public class BFS {
         return "Nothing found";
     }
 
-    static int getPathLength(Map<String,String> predecessor, String start, String finish){
+    private int getPathLength(Map<String,String> predecessor, String start, String finish){
         int count = 0;
 
         String next = predecessor.get(finish);

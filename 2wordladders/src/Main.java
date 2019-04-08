@@ -9,8 +9,14 @@ public class Main {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
-        Map<String, List<String>> graph = Parser.parse(bufferedReader);
+        Parser parser = new Parser(bufferedReader);
 
+        Map<String, List<String>> graph = Parser.getGraph();
 
+        String start = Parser.getStart();
+        String finish = Parser.getFinish();
+
+        BFS bfs = new BFS();
+        bfs.run(graph, start, finish);
     }
 }
