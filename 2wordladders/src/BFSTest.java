@@ -36,6 +36,6 @@ public class BFSTest {
         BFS bfs = new BFS();
         assertEquals("Grafen har ej hittat den kortaste på två","2", bfs.run(graph, start, finish));
         assertEquals("Grafen har ej hittat den kortaste på två","1", bfs.run(graph, "EA", "FA"));
-        assertEquals("Grafen har ej hittat den kortaste på två","Nothing found", bfs.run(graph, "AA", "CO"));
+        assertEquals("Grafen har ej hittat den kortaste på två","Impossible", bfs.run(graph, "AA", "CO"));
     }
 }

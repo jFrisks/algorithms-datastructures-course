@@ -4,6 +4,9 @@ import java.util.*;
 public class BFS {
 
     public String run(Map<String, List<String>> graph, String start, String finish){
+
+        if(start.equals(finish)) return "0";
+
         Map<String, Boolean> visited = new HashMap<>();
         Map<String, String> predecessor = new HashMap<>();
 
@@ -34,7 +37,7 @@ public class BFS {
             }
         }
 
-        return "Nothing found";
+        return "Impossible";
     }
 
     private int getPathLength(Map<String,String> predecessor, String start, String finish){
