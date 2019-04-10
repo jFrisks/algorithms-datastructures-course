@@ -4,10 +4,11 @@
 \usepackage{booktabs}
 \usepackage{microtype}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{listings}
 \pagestyle{empty}
 
 \title{Word ladders report}
-\author{Author 1 and Author 2}
+\author{Jonathan Frisk and Elias Vernersson}
 
 \begin{document}
   \maketitle
@@ -15,9 +16,34 @@
   \section{Results}
 
   \todo[inline]{Briefly comment the results, did the script say all your solutions were correct? Approximately how long time does it take for the program to run on the largest input? What takes the majority of the time?}
-
+  
+  \par All the scripts run and execute correctly. The program takes roughly 18 seconds to run and the all the large tests take about 17 seconds to complete. The large tests take the longest to complete, as it takes about 95\% of the time. 
+  
+  
   \section{Implementation details}
 
   \todo[inline]{How did you implement the solution? Which data structures were used? Which modifications to these data structures were used? What is the overall running time? Why?}
+
+  \par We have a Parser which is used in order to load and parse the indata. The Parser puts the indata into different data structure. The graph is put into the following structure:
+\begin{lstlisting}
+Map<String, List<String>>
+\end{lstlisting}
+This is so that each word is connected to several other words. The Parser also checks and connects words that satisfy the condition. To store the start to finish pairs we use a list of Pairs, which is a object that stores two values somewhat like a tuple.
+\begin{lstlisting}
+List<Pair>
+\end{lstlisting}
+Then we go through the graph with all the start and finish words so that we can evalueate wether or not there is a path between the two words or not, as well as printing the path length between the words if there is one.
+
+  \textbf{We have the following classes:}
+  \begin{itemize}
+  \item Main.java
+  \item Parser.java
+  \item BFS.java
+  \item Pair.java
+  \item ParserTest.java
+  \item BFSTest.java   
+  \end{itemize}
+
+  \par The total amount of time it takes to run the tests are about 18 seconds from start to finish.
 
 \end{document}
