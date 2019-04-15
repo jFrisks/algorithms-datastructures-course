@@ -74,24 +74,10 @@ public class Parser {
         //loop all words och create subset of subwords. These subwords will be out as keys in a map, with list of words that contains subwords.
         Map<String, List<String>> subwordNeighbourMap = new HashMap<>();
         for(String  word : words){//O(n)
-            Set<String> subwords = new HashSet<>();
-            //skapa subwords - dvs ABCD -> [BCD, ACD, ABD, ABCD
+            //skapa subwords of length l-1 - dvs ABCD -> [BCD, ACD, ABD, ABCD
             for(int i = 0; i <= word.length()-1; i ++){ //O(l)
-                String subword = word.substring(0, i).concat(word.substring(i+1));
-                subwords.add(subword);
-            }
-
-            //lägg in subwords i listor
-            for(String subword : subwords){ //O(l)
-                String sortedSubword = sortCharsInString(subword);
-                List<String> neighbours = subwordNeighbourMap.get(sortedSubword);
-                if(neighbours == null){
-                    List<String> newSet = new ArrayList<>();
-                    newSet.add(word);
-                    subwordNeighbourMap.put(sortedSubword, newSet);
-                }else{
-                    neighbours.add(word);
-                }
+                String newSubword = word.substring(0, i).concat(word.substring(i+1));
+                addWordsToSubwordMap(subwordNeighbourMap, word, newSubword);
             }
         }
 
@@ -105,6 +91,18 @@ public class Parser {
             graph.put(word, neighbours);
         }
 
+    }
+
+    private void addWordsToSubwordMap(Map<String, List<String>> subwordNeighbourMap, String word, String subword) {
+        String sortedSubword = sortCharsInString(subword);
+        List<String> neighbours = subwordNeighbourMap.get(sortedSubword);
+        if(neighbours == null){
+            List<String> newSet = new ArrayList<>();
+            newSet.add(word);
+            subwordNeighbourMap.put(sortedSubword, newSet);
+        }else{
+            neighbours.add(word);
+        }
     }
 
     private String sortCharsInString(String subword) {
