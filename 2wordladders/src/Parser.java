@@ -31,7 +31,7 @@ public class Parser {
             startFinishPairs.add(new Pairs(start, finish));
         }
 
-        createGraph();
+        createGraphFaster();
     }
 
     private void createGraph() {
@@ -68,6 +68,49 @@ public class Parser {
 
         if (removedAmount == word1.length) return true;
         else return false;
+    }
+
+    void createGraphFaster(){
+        //loop all words och create subset of subwords. These subwords will be out as keys in a map, with list of words that contains subwords.
+        Map<String, List<String>> subwordNeighbourMap = new HashMap<>();
+        for(String  word : words){//O(n)
+            Set<String> subwords = new HashSet<>();
+            //skapa subwords - dvs ABCD -> [BCD, ACD, ABD, ABCD
+            for(int i = 0; i <= word.length()-1; i ++){ //O(l)
+                String subword = word.substring(0, i).concat(word.substring(i+1));
+                subwords.add(subword);
+            }
+
+            //lägg in subwords i listor
+            for(String subword : subwords){ //O(l)
+                String sortedSubword = sortCharsInString(subword);
+                List<String> neighbours = subwordNeighbourMap.get(sortedSubword);
+                if(neighbours == null){
+                    List<String> newSet = new ArrayList<>();
+                    newSet.add(word);
+                    subwordNeighbourMap.put(sortedSubword, newSet);
+                }else{
+                    neighbours.add(word);
+                }
+            }
+        }
+
+        //Loop through all words subwords and get their list of possible word-neighbours
+        for(String word : words){ //O(n)
+            String sortedSubword = sortCharsInString(word.substring(1));
+            List<String> neighbours = subwordNeighbourMap.get(sortedSubword);
+            if(neighbours == null){
+                neighbours = new ArrayList<>();
+            }
+            graph.put(word, neighbours);
+        }
+
+    }
+
+    private String sortCharsInString(String subword) {
+        char[] subwordArray = subword.toCharArray();
+        Arrays.sort(subwordArray);
+        return new String(subwordArray);
     }
 
     public Map<String, List<String>> getGraph() {
