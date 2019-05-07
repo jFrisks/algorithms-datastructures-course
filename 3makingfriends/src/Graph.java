@@ -8,7 +8,7 @@ public class Graph {
     int amountOfPeople;
     Map<Integer, Map<Integer, Integer>> weightMap;
     List<Edge> relationMap = new ArrayList<>();
-    Map<Integer, ArrayList<Integer>> nodes = new HashMap<Integer, ArrayList<Integer>>();
+    List<Node<Integer>> nodes = new ArrayList<>();
 
     public void parse(BufferedReader br) throws IOException {
 
@@ -59,19 +59,12 @@ public class Graph {
         }
     }
 
-    public Map getRelation(int weight) {
-        return weightMap.get(weight);
-    }
-
-    public Set<Integer> getAllNodes() {
-        return nodes.keySet();
+    public List<Node<Integer>> getAllNodes() {
+        return nodes;
     }
 
     public List<Edge> getAllEdges() {
         return relationMap;
     }
 
-    public List getAdjacent(int node) {
-        return nodes.get(node);
-    }
 }
