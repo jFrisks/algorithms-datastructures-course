@@ -5,7 +5,7 @@ public class Main{
 
     public static void main(String[] args) throws Exception {
         Graph graph = new Graph();
-        BufferedReader br = new BufferedReader(new FileReader("./3makingfriends/data/secret/3large.in"));
+        BufferedReader br = new BufferedReader(new FileReader("./3makingfriends/data/secret/4huge.in"));
 
         graph.parse(br);
         MST mst = new MST();
