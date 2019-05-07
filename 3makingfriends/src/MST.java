@@ -27,31 +27,33 @@ public class MST {
 
 
         //Q <- unvisited nodes and init the first node
-        List<Node> Q = graph.getAllNodes();
-        Node root = Q.get(0);
-        Q.remove(root);
-        updateKeys(root);
+        List<Node<Integer>> Q = graph.getAllNodes();
+        Node startNode = Q.get(0);
+        Q.remove(startNode);
+        updateKeys(startNode);
 
         System.out.println("Q: " + Q + "unvisitedQueue: " + unvisitedQueue);
 
         while(Q.isEmpty()){
+            Node nodeToRemove;
+            Edge nextEdge;
 
-            //nodeToRemove <- null
-            //nextEdge <- null
+        //select a v that mimize the w(v). u is from Q, v is from visited. relation between (u,v)
+            //nextEdge <- peek next edge from UnvisitedQueue (with least weight)
+            nextEdge = unvisitedQueue.peek();
 
-            //select a v that mimize the w(v). u is from Q, v is from visited. relation between (u,v)
-                //nextEdge <- peek next edge from UnvisitedQueue (with least weight)
-                //for node in edge
+            for(){
                 //if one of nodes is visited
                     //if other node not visited
                         //nodeToRemove <- select that other not visited node
                         //TODO hantera fel med ej hittad nod
                     //else TODO felhantering
                 //else TODO felhantering
-            //updateKeys(nodeToRemove)      Sideeffect - bad, bud fast
-            //remove nodeToRemove from Q
-            //poll nextEdge from unvisitedQueue
-            //add nextEdge to T
+            }
+        //updateKeys(nodeToRemove)      Sideeffect - bad, bud fast
+        //remove nodeToRemove from Q
+        //poll nextEdge from unvisitedQueue
+        //add nextEdge to T
         //return T
         }
     }
