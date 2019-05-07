@@ -31,4 +31,9 @@ public class Tuple <F, L> {
         }
         return false;
     }
+
+    @Override
+    public int hashCode() {
+        return first.hashCode() + last.hashCode();
+    }
 }

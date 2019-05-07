@@ -6,8 +6,9 @@ public class Graph {
 
     int[] indata;
     int amountOfPeople;
-    Map<Integer, Map<Integer, Integer>> graph;
-    Set<Integer> nodes = new HashSet<Integer>();
+    Map<Integer, Map<Integer, Integer>> weightMap;
+    Map<Tuple<Integer, Integer>, Integer> relationMap = new HashMap<>();
+    Map<Integer, ArrayList<Integer>> nodes = new HashMap<Integer, ArrayList<Integer>>();
 
     public void parse(BufferedReader br) throws IOException {
 
@@ -25,33 +26,49 @@ public class Graph {
         //Since we don't want to go out of bounds on the far end.
         rows = rows - 1;
 
-        graph = new HashMap<>();
+        weightMap = new HashMap<>();
 
         for (int i = 2; i <= (rows * 3) + 2; i = i + 3) {
             add(indata[i], indata[i + 1], indata[i + 2]);
         }
     }
 
-    public Map add(int from, int to, int weight) {
-        nodes.add(from);
-        nodes.add(to);
+    public void add(int from, int to, int weight) {
 
-        Map<Integer, Integer> map = graph.get(weight);
+        List<Integer> neighbours = nodes.get(from);
+        if (neighbours != null) {
+            neighbours.add(to);
+        } else {
+            ArrayList<Integer> newList = new ArrayList<>();
+            newList.add(to);
+            nodes.put(from, newList);
+        }
+
+        Map<Integer, Integer> map = weightMap.get(weight);
         if (map != null) {
             map.put(from, to);
-            return graph;
+            relationMap.put(new Tuple<Integer, Integer>(from, to), weight);
         } else {
             Map newMap = new HashMap<Integer, Integer>();
             newMap.put(from, to);
-            return graph.put(weight, newMap);
+            relationMap.put(new Tuple<Integer, Integer>(from, to), weight);
+            weightMap.put(weight, newMap);
         }
     }
 
     public Map getRelation(int weight) {
-        return graph.get(weight);
+        return weightMap.get(weight);
     }
 
     public Set<Integer> getAllNodes() {
-        return nodes;
+        return nodes.keySet();
+    }
+
+    public int getWeight(int from, int to) {
+        return relationMap.get(new Tuple<Integer, Integer>(from, to));
+    }
+
+    public List getAdjacent(int node) {
+        return nodes.get(node);
     }
 }
