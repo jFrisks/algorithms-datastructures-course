@@ -7,6 +7,7 @@ public class Graph {
     int[] indata;
     int amountOfPeople;
     Map<Integer, Map<Integer, Integer>> graph;
+    Set<Integer> nodes = new HashSet<Integer>();
 
     public void parse(BufferedReader br) throws IOException {
 
@@ -32,6 +33,9 @@ public class Graph {
     }
 
     public Map add(int from, int to, int weight) {
+        nodes.add(from);
+        nodes.add(to);
+
         Map<Integer, Integer> map = graph.get(weight);
         if (map != null) {
             map.put(from, to);
@@ -45,5 +49,9 @@ public class Graph {
 
     public Map getRelation(int weight) {
         return graph.get(weight);
+    }
+
+    public Set<Integer> getAllNodes() {
+        return nodes;
     }
 }
