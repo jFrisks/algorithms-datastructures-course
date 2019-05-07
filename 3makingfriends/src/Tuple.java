@@ -23,4 +23,12 @@ public class Tuple <F, L> {
                 ", "+ last.toString() +
                 ')';
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj instanceof Tuple) {
+            if(this.first.equals(((Tuple) obj).first) && this.last.equals(((Tuple) obj).last)) return true;
+        }
+        return false;
+    }
 }

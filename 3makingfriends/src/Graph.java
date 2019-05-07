@@ -1,18 +1,14 @@
 import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 
 public class Graph {
 
     int[] indata;
     int amountOfPeople;
-    List<Tuple<Tuple<Integer, Integer>, Integer>> graph;
+    Map<Integer, Map<Integer, Integer>> graph;
 
     public void parse(BufferedReader br) throws IOException {
-
-        System.out.println("Parsing started");
 
         StringBuilder stringBuilder = new StringBuilder();
 
@@ -28,33 +24,26 @@ public class Graph {
         //Since we don't want to go out of bounds on the far end.
         rows = rows - 1;
 
-        graph = new ArrayList<>();
+        graph = new HashMap<>();
 
         for (int i = 2; i <= (rows * 3) + 2; i = i + 3) {
             add(indata[i], indata[i + 1], indata[i + 2]);
         }
-
-        graph.forEach(x -> System.out.println(x.toString()));
-        System.out.println(totalWeigth());
     }
 
-    public boolean add(int from, int to, int weight) {
-        return graph.add(new Tuple<Tuple<Integer, Integer>, Integer>(new Tuple<Integer, Integer>(from, to), weight));
-    }
-
-    public List<Tuple<Tuple<Integer, Integer>, Integer>> getGraph() {
-        return graph;
-    }
-    
-    public int totalWeigth() {
-        int sum = 0;
-
-        for (Tuple elem :
-                graph) {
-            int a = (int) elem.last;
-            sum = sum + a;
+    public Map add(int from, int to, int weight) {
+        Map<Integer, Integer> map = graph.get(weight);
+        if (map != null) {
+            map.put(from, to);
+            return graph;
+        } else {
+            Map newMap = new HashMap<Integer, Integer>();
+            newMap.put(from, to);
+            return graph.put(weight, newMap);
         }
+    }
 
-        return sum;
+    public Map getRelation(int weight) {
+        return graph.get(weight);
     }
 }
