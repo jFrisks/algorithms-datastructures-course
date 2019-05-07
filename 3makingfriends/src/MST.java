@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class MST {
-    public void prim(Graph graph){
+    public Set<Edge> prim(Graph graph) throws Exception {
 
         //TODO PROBLEM
         //
@@ -34,7 +34,7 @@ public class MST {
 
         System.out.println("Q: " + Q + "unvisitedQueue: " + unvisitedQueue);
 
-        while(Q.isEmpty()){
+        while(!Q.isEmpty()){
             Node nodeToRemove;
             Edge nextEdge;
 
@@ -42,20 +42,30 @@ public class MST {
             //nextEdge <- peek next edge from UnvisitedQueue (with least weight)
             nextEdge = unvisitedQueue.peek();
 
-            for(){
-                //if one of nodes is visited
-                    //if other node not visited
-                        //nodeToRemove <- select that other not visited node
-                        //TODO hantera fel med ej hittad nod
-                    //else TODO felhantering
-                //else TODO felhantering
+            Boolean edgeFrom = false;
+            Boolean edgeTo = false;
+
+            if(nextEdge != null){
+                edgeFrom = Q.contains(nextEdge.from);
+                edgeTo  = Q.contains(nextEdge.to);
             }
-        //updateKeys(nodeToRemove)      Sideeffect - bad, bud fast
-        //remove nodeToRemove from Q
-        //poll nextEdge from unvisitedQueue
-        //add nextEdge to T
-        //return T
+
+            if(edgeFrom ^ edgeTo){
+                if(!edgeFrom) nodeToRemove = nextEdge.from;
+                else nodeToRemove = nextEdge.to;
+            }else{
+                throw new Exception("PriorityHeap not working. Upper edge seem to contain both either visited or unvisited");
+            }
+
+            updateKeys(nodeToRemove);      //Sideeffect - bad, bud fast
+            //remove nodeToRemove from Q
+            Q.remove(nodeToRemove);
+            //poll nextEdge from unvisitedQueue
+            unvisitedQueue.poll();
+            //add nextEdge to T
+            outputTree.add(nextEdge);
         }
+        return outputTree;
     }
 
     void updateKeys(Node node){
