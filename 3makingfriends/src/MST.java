@@ -12,7 +12,11 @@ public class MST {
                 //graph.getWeight(relation)
                 //graph.getAllNodes()
 
-
+        //Q <- unvisited nodes and init the first node
+        List<Node<Integer>> Q = new ArrayList<>(graph.getAllNodes());
+        Node startNode = Q.get(0);
+        Q.remove(startNode);
+        updateKeys(startNode);
 
         //T <- Empty Output Tree (set of Edges)
         Set<Edge> outputTree = new HashSet<Edge>();
@@ -25,14 +29,7 @@ public class MST {
         PriorityQueue<Edge> unvisitedQueue = new PriorityQueue<Edge>(comp);
         unvisitedQueue.addAll(allEdges);
 
-
-        //Q <- unvisited nodes and init the first node
-        List<Node<Integer>> Q = graph.getAllNodes();
-        Node startNode = Q.get(0);
-        Q.remove(startNode);
-        updateKeys(startNode);
-
-        System.out.println("Q: " + Q + "unvisitedQueue: " + unvisitedQueue);
+        //System.out.println("Q: " + Q + "unvisitedQueue: " + unvisitedQueue);
 
         while(!Q.isEmpty()){
             Node nodeToRemove;
@@ -54,14 +51,19 @@ public class MST {
                 if(edgeTo) nodeToRemove = nextEdge.to;
                 else nodeToRemove = nextEdge.from;
             }else{
-                throw new Exception("PriorityHeap not working. Upper edge seem to contain both either visited or unvisited");
+                throw new Exception("PriorityHeap not working. Upper edge seem to contain both either visited or unvisited" + edgeFrom + edgeTo);
             }
 
-            updateKeys(nodeToRemove);      //Sideeffect - bad, bud fast
+            updateKeys(nodeToRemove);      //Side effect - bad, bud fast
             //remove nodeToRemove from Q
             Q.remove(nodeToRemove);
             //poll nextEdge from unvisitedQueue
             unvisitedQueue.poll();
+            PriorityQueue<Edge> newQueue= new PriorityQueue<Edge>(comp);
+            unvisitedQueue.forEach(x -> newQueue.add(x));
+            unvisitedQueue = new PriorityQueue<Edge>(comp);
+            unvisitedQueue.addAll(newQueue);
+
             //add nextEdge to T
             outputTree.add(nextEdge);
         }
@@ -69,7 +71,7 @@ public class MST {
     }
 
     void updateKeys(Node node){
-        //node.setNeighboursReachable();
+        node.setNeighboursReachable();
     }
 }
 
@@ -80,7 +82,7 @@ public class MST {
 //            //Sorting with heapify ---> Priorityueue Does that
 //            //Deleteing rel from possibleRels modifies the graph
 //            //Adding one to UnvisitiedQueue becomes nlogn -> should be fixed with constructor thich takes a collection
-//            //need to see neighbours to change keys - even for first root
+//            //need to see neighboursEdges to change keys - even for first root
 //                //Need to update keys when we have added chosendRel to T. Then need to update keys
 //            //How to define infiinty weight??
 //
@@ -115,7 +117,7 @@ public class MST {
 //            //remove chosenNode from Q
 //            //remove chosenRel from nextPossibleRels
 //            //add chosendRel to T
-//            //TODO: Update keys for neighbours of chosenNode
+//            //TODO: Update keys for neighboursEdges of chosenNode
 //        //return T
 
 

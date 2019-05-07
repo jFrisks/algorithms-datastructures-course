@@ -1,16 +1,23 @@
 import java.io.*;
+import java.util.Set;
 
 public class Main{
 
     public static void main(String[] args) throws Exception {
         Graph graph = new Graph();
-        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String eliasFilePath = "";
-        //BufferedReader br = new BufferedReader(new FileReader("/Users/eliasvernersson/IdeaProjects/algorithms-datastructures-course/3makingfriends/data/sample/2.in"));
-        BufferedReader br = new BufferedReader(new FileReader("./3makingfriends/data/sample/2.in"));
+        BufferedReader br = new BufferedReader(new FileReader("./3makingfriends/data/secret/1small.in"));
 
         graph.parse(br);
         MST mst = new MST();
-        mst.prim(graph);
+        Set<Edge> graf = mst.prim(graph);
+
+        int sum = 0;
+
+        for (Edge edge :
+                graf) {
+            sum = sum + edge.getWeight();
+        }
+
+        System.out.println(sum);
     }
 }
