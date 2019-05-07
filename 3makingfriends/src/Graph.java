@@ -6,7 +6,6 @@ public class Graph {
 
     int[] indata;
     int amountOfPeople;
-    Map<Integer, Map<Integer, Integer>> weightMap;
     List<Edge> relationMap = new ArrayList<>();
     List<Node<Integer>> nodes = new ArrayList<>();
 
@@ -26,8 +25,6 @@ public class Graph {
         //Since we don't want to go out of bounds on the far end.
         rows = rows - 1;
 
-        weightMap = new HashMap<>();
-
         for (int i = 2; i <= (rows * 3) + 2; i = i + 3) {
             add(indata[i], indata[i + 1], indata[i + 2]);
         }
@@ -38,25 +35,12 @@ public class Graph {
 
     public void add(int from, int to, int weight) {
 
-        List<Integer> neighbours = nodes.get(from);
-        if (neighbours != null) {
-            neighbours.add(to);
-        } else {
-            ArrayList<Integer> newList = new ArrayList<>();
-            newList.add(to);
-            nodes.put(from, newList);
-        }
+        Node fromNode = new Node(from);
+        Node toNode = new Node(to);
 
-        Map<Integer, Integer> map = weightMap.get(weight);
-        if (map != null) {
-            map.put(from, to);
-            relationMap.add(new Edge(new Node<Integer>(from), new Node<Integer>(to), weight, false));
-        } else {
-            Map newMap = new HashMap<Integer, Integer>();
-            newMap.put(from, to);
-            relationMap.add(new Edge(new Node<Integer>(from), new Node<Integer>(to), weight, false));
-            weightMap.put(weight, newMap);
-        }
+        relationMap.add(new Edge(fromNode, toNode, weight, false));
+        nodes.add(fromNode);
+        nodes.add(toNode);
     }
 
     public List<Node<Integer>> getAllNodes() {
