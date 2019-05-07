@@ -12,6 +12,7 @@ public class MST {
                 //graph.getWeight(relation)
                 //graph.getAllNodes()
 
+        //System.out.println("Starting Prim's Algorithm");
         //Q <- unvisited nodes and init the first node
         List<Node<Integer>> Q = new ArrayList<>(graph.getAllNodes());
         Node startNode = Q.get(0);
@@ -39,33 +40,37 @@ public class MST {
             //nextEdge <- peek next edge from UnvisitedQueue (with least weight)
             nextEdge = unvisitedQueue.peek();
 
-            Boolean edgeFrom = false;
-            Boolean edgeTo = false;
+            Boolean edgeFrom = null;
+            Boolean edgeTo = null;
 
             if(nextEdge != null){
                 edgeFrom = Q.contains(nextEdge.from);
                 edgeTo  = Q.contains(nextEdge.to);
             }
 
+            //If one visited and other not. Legit edge to add.
             if(edgeFrom ^ edgeTo){
                 if(edgeTo) nodeToRemove = nextEdge.to;
                 else nodeToRemove = nextEdge.from;
+
+                Q.remove(nodeToRemove);
+                outputTree.add(nextEdge);
+                updateKeys(nodeToRemove);      //Side effect - bad, bud fast
+            }else if (!edgeFrom && !edgeTo){
+                System.out.println("Tried edge between two already visited nodes");
             }else{
-                throw new Exception("PriorityHeap not working. Upper edge seem to contain both either visited or unvisited" + edgeFrom + edgeTo);
+                throw new Exception("Both nodes is unvisited. Might be that PriorityHeap tried to pick edge not connected to the tree" + edgeFrom + edgeTo);
             }
 
-            updateKeys(nodeToRemove);      //Side effect - bad, bud fast
-            //remove nodeToRemove from Q
-            Q.remove(nodeToRemove);
             //poll nextEdge from unvisitedQueue
-            unvisitedQueue.poll();
-            PriorityQueue<Edge> newQueue= new PriorityQueue<Edge>(comp);
-            unvisitedQueue.forEach(x -> newQueue.add(x));
-            unvisitedQueue = new PriorityQueue<Edge>(comp);
-            unvisitedQueue.addAll(newQueue);
+            unvisitedQueue.poll();  //O(logm)
+            PriorityQueue<Edge> newQueue= new PriorityQueue<Edge>(comp); //O(m)
+            unvisitedQueue.forEach(x -> newQueue.add(x)); //O(mlogm)
+            unvisitedQueue = new PriorityQueue<Edge>(comp); //O(m)
+            unvisitedQueue.addAll(newQueue); //O(m) or O(mlogm)
+            //Total o(3*m+mlogm+logm)
+            //Med m=500k 0> total=1500k+6*500k+6
 
-            //add nextEdge to T
-            outputTree.add(nextEdge);
         }
         return outputTree;
     }
