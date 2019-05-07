@@ -38,6 +38,8 @@ public class Graph {
         Node fromNode = new Node(from);
         Node toNode = new Node(to);
 
+        //GÖR CHECK OM REDAN FINNS
+
         relationMap.add(new Edge(fromNode, toNode, weight, false));
         nodes.add(fromNode);
         nodes.add(toNode);

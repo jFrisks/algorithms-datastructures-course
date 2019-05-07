@@ -51,8 +51,8 @@ public class MST {
             }
 
             if(edgeFrom ^ edgeTo){
-                if(!edgeFrom) nodeToRemove = nextEdge.from;
-                else nodeToRemove = nextEdge.to;
+                if(edgeTo) nodeToRemove = nextEdge.to;
+                else nodeToRemove = nextEdge.from;
             }else{
                 throw new Exception("PriorityHeap not working. Upper edge seem to contain both either visited or unvisited");
             }
@@ -69,7 +69,7 @@ public class MST {
     }
 
     void updateKeys(Node node){
-        //TODO: do it
+        //node.setNeighboursReachable();
     }
 }
 
