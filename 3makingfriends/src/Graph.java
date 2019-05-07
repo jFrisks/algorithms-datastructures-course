@@ -7,7 +7,7 @@ public class Graph {
     int[] indata;
     int amountOfPeople;
     Map<Integer, Map<Integer, Integer>> weightMap;
-    Map<Tuple<Integer, Integer>, Integer> relationMap = new HashMap<>();
+    List<Edge> relationMap = new ArrayList<>();
     Map<Integer, ArrayList<Integer>> nodes = new HashMap<Integer, ArrayList<Integer>>();
 
     public void parse(BufferedReader br) throws IOException {
@@ -31,6 +31,9 @@ public class Graph {
         for (int i = 2; i <= (rows * 3) + 2; i = i + 3) {
             add(indata[i], indata[i + 1], indata[i + 2]);
         }
+
+        relationMap.forEach(x -> System.out.println(x.toString()));
+
     }
 
     public void add(int from, int to, int weight) {
@@ -47,11 +50,11 @@ public class Graph {
         Map<Integer, Integer> map = weightMap.get(weight);
         if (map != null) {
             map.put(from, to);
-            relationMap.put(new Tuple<Integer, Integer>(from, to), weight);
+            relationMap.add(new Edge(new Node<Integer>(from), new Node<Integer>(to), weight, false));
         } else {
             Map newMap = new HashMap<Integer, Integer>();
             newMap.put(from, to);
-            relationMap.put(new Tuple<Integer, Integer>(from, to), weight);
+            relationMap.add(new Edge(new Node<Integer>(from), new Node<Integer>(to), weight, false));
             weightMap.put(weight, newMap);
         }
     }
@@ -64,8 +67,8 @@ public class Graph {
         return nodes.keySet();
     }
 
-    public int getWeight(int from, int to) {
-        return relationMap.get(new Tuple<Integer, Integer>(from, to));
+    public List<Edge> getAllEdges() {
+        return relationMap;
     }
 
     public List getAdjacent(int node) {

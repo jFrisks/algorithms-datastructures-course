@@ -23,4 +23,14 @@ public class Edge {
     public int getWeight() {
         return weight;
     }
+
+    @Override
+    public String toString() {
+        return "{(" +
+                from.toString() +
+                " -> " + to.toString() +
+                ") weight=" + weight +
+                ", isReachable=" + isReachable +
+                "}";
+    }
 }
