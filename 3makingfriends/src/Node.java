@@ -18,7 +18,7 @@ public class Node<K> {
         return ID.toString();
     }
 
-    public List<Edge> getNeighbours() {
+    public List<Edge> getNeighbourEdges() {
         return neighbours;
     }
 }
