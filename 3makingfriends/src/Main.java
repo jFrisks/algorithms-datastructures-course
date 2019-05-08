@@ -5,7 +5,8 @@ public class Main{
 
     public static void main(String[] args) throws Exception {
         Graph graph = new Graph();
-        BufferedReader br = new BufferedReader(new FileReader("./3makingfriends/data/secret/4huge.in"));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        //BufferedReader br = new BufferedReader(new FileReader("./3makingfriends/data/secret/4huge.in"));
 
         //long startTime = System.currentTimeMillis();
         graph.parse(br);
