@@ -8,6 +8,7 @@ public class Graph {
     int amountOfPeople;
     List<Edge> edges = new ArrayList<>();
     Map<Integer, Node<Integer>> nodes = new HashMap<>();
+    private Node startNode = null;
 
     public void parse(BufferedReader br) throws IOException {
 
@@ -25,13 +26,14 @@ public class Graph {
         //Since we don't want to go out of bounds on the far end.
         rows = rows - 1;
 
+        startNode = new Node(indata[2]);
+
         for (int i = 2; i <= (rows * 3) + 2; i = i + 3) {
             add(indata[i], indata[i + 1], indata[i + 2]);
         }
     }
 
     public void add(int from, int to, int weight) {
-
         Node fromNode = nodes.get(from);
         Node toNode = nodes.get(to);
 
@@ -64,6 +66,10 @@ public class Graph {
 
     public List<Edge> getAllEdges() {
         return edges;
+    }
+
+    public Node getStartNode() {
+        return startNode;
     }
 
 }
