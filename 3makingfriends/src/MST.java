@@ -1,39 +1,35 @@
 import java.util.*;
 
 public class MST {
-    public Set<Edge> prim(Graph graph) throws Exception {
+    public Set<Edge> prim(Graph graph, Node startNode) throws Exception {
 
         Comparator<Edge> comp = new EdgeComparator();
         PriorityQueue<Edge> unvisitedQueue = new PriorityQueue<Edge>(comp);
         //System.out.println("Starting Prim's Algorithm");
         //Q <- unvisited nodes and init the first node
-        List<Node<Integer>> Q = new ArrayList<>(graph.getAllNodes());
-        Node startNode = Q.get(0);
+        Set<Node<Integer>> Q = new HashSet<>(graph.getAllNodes());
         Q.remove(startNode);
         updateReachableAndUnvisited(startNode, unvisitedQueue);
 
         //T <- Empty Output Tree (set of Edges)
         Set<Edge> outputTree = new HashSet<Edge>();
 
-
-
         //System.out.println("Q: " + Q + "unvisitedQueue: " + unvisitedQueue);
 
-        while(!Q.isEmpty()){
-
+        while(!Q.isEmpty()){    //O(n)
             Node nodeToRemove;
             Edge nextEdge;
 
         //select a v that mimize the w(v). u is from Q, v is from visited. relation between (u,v)
             //nextEdge <- peek next edge from UnvisitedQueue (with least weight)
-            nextEdge = unvisitedQueue.peek();
+            nextEdge = unvisitedQueue.peek(); //O(1)
 
             Boolean edgeFrom = null;
             Boolean edgeTo = null;
 
             if(nextEdge != null){
-                edgeFrom = Q.contains(nextEdge.from);
-                edgeTo  = Q.contains(nextEdge.to);
+                edgeFrom = Q.contains(nextEdge.from); //O(1)
+                edgeTo  = Q.contains(nextEdge.to);  //o(1)
             }
 
             //If one visited and other not. Legit edge to add.
@@ -41,13 +37,13 @@ public class MST {
                 if(edgeTo) nodeToRemove = nextEdge.to;
                 else nodeToRemove = nextEdge.from;
 
-                Q.remove(nodeToRemove);
-                outputTree.add(nextEdge);
+                Q.remove(nodeToRemove);      //O(1)
+                outputTree.add(nextEdge);   //O(1)
                 unvisitedQueue.poll();  //O(logm)
-                updateReachableAndUnvisited(nodeToRemove, unvisitedQueue);      //Side effect - bad, bud fast. Adds reachable
+                updateReachableAndUnvisited(nodeToRemove, unvisitedQueue); //O((neighbouredges=50)*logm) //O(mlogm)     //Side effect - bad, bud fast. Adds reachable
             }else if (!edgeFrom && !edgeTo){
                 //System.out.println("Tried edge between two already visited nodes");
-                unvisitedQueue.poll();
+                unvisitedQueue.poll(); //O(logm)
             }else{
                 throw new Exception("Both nodes is unvisited. Might be that PriorityHeap tried to pick edge not connected to the tree" + edgeFrom + edgeTo);
             }
@@ -57,6 +53,7 @@ public class MST {
 
             //Total o(3*m+mlogm+logm)
             //Med m=500k 0> total=1500k+6*500k+6
+
         }
         return outputTree;
     }
