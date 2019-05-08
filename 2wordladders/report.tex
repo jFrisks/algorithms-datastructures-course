@@ -17,7 +17,8 @@
 
   \todo[inline]{Briefly comment the results, did the script say all your solutions were correct? Approximately how long time does it take for the program to run on the largest input? What takes the majority of the time?}
   
-  \par All the scripts run and execute correctly. The program takes roughly 18 seconds to run and the all the large tests take about 17 seconds to complete. The large tests take the longest to complete, as it takes about 95\% of the time. 
+  \par All the scripts run and execute correctly. Our first version of the program took roughly 18 seconds to run and the all the large tests took about 17 seconds to complete. The large tests took the longest to complete, as it took about 95\% of the time.
+  \par The second version of our parser cut the time to around 11-12 seconds. We created a Map<subwords, wordNeighbours> which ran at O(n). However, when we refactored into submethods and removed one loop everything slowed down with 0.2s. Interesting.
   
   
   \section{Implementation details}
