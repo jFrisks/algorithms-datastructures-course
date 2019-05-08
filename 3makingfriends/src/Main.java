@@ -7,9 +7,11 @@ public class Main{
         Graph graph = new Graph();
         BufferedReader br = new BufferedReader(new FileReader("./3makingfriends/data/secret/4huge.in"));
 
+        //long startTime = System.currentTimeMillis();
         graph.parse(br);
         MST mst = new MST();
-        Set<Edge> graf = mst.prim(graph);
+        Node startNode = graph.getStartNode();
+        Set<Edge> graf = mst.prim(graph, graph.getStartNode());
 
         int sum = 0;
 
@@ -19,5 +21,7 @@ public class Main{
         }
 
         System.out.println(sum);
+        //long finishTime = System.currentTimeMillis();
+       // System.out.println((finishTime-startTime) / 1000);
     }
 }
