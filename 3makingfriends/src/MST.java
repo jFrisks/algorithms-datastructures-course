@@ -15,9 +15,12 @@ public class MST {
         //T <- Empty Output Tree (set of Edges)
         Set<Edge> outputTree = new HashSet<Edge>();
 
+
+
         //System.out.println("Q: " + Q + "unvisitedQueue: " + unvisitedQueue);
 
         while(!Q.isEmpty()){
+
             Node nodeToRemove;
             Edge nextEdge;
 
@@ -54,7 +57,6 @@ public class MST {
 
             //Total o(3*m+mlogm+logm)
             //Med m=500k 0> total=1500k+6*500k+6
-
         }
         return outputTree;
     }
