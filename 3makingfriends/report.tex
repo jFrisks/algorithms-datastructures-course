@@ -15,9 +15,18 @@
   \section{Results}
 
   \todo[inline]{Briefly comment the results, did the script say all your solutions were correct? Approximately how long time does it take for the program to run on the largest input? What takes the majority of the time?}
+  
+  \par
+  All the tests are correct and take about 13 seconds to execute. The Huge data input executed in roughly 10 seconds. The majority of the time is spent on executing the large data input. This is to be expected since the huge data input is the largest input.
 
   \section{Implementation details}
 
   \todo[inline]{How did you implement the solution? Which data structures were used? Which modifications to these data structures were used? What is the overall running time? Why?}
+  
+  \par
+  We used Prim's alogorithm in order to create a MST. We have both a Node and  an Edge class to represent them respectively, a class that parses and greates a graph from the input as well as a class that actually creates a MST from the parsed graph. We used a PriorityQueue to keep track of the least 'costly' unvisited edges which are put in a set to output the MST. we used a set to keep track of all the unvisited nodes. In the Graph class we use a map to hold all the nodes with their ID as key.
+  
+  \par  
+  The time complexity of Prim's algorithm is O(m*log(n))
 
 \end{document}
