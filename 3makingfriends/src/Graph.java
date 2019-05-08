@@ -27,6 +27,7 @@ public class Graph {
         rows = rows - 1;
 
         startNode = new Node(indata[2]);
+        nodes.put((int)startNode.ID, startNode);
 
         for (int i = 2; i <= (rows * 3) + 2; i = i + 3) {
             add(indata[i], indata[i + 1], indata[i + 2]);
