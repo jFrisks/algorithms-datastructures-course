@@ -27,6 +27,8 @@
   We used Prim's alogorithm in order to create a MST. We have both a Node and  an Edge class to represent them respectively, a class that parses and greates a graph from the input as well as a class that actually creates a MST from the parsed graph. We used a PriorityQueue to keep track of the least 'costly' unvisited edges which are put in a set to output the MST. we used a set to keep track of all the unvisited nodes. In the Graph class we use a map to hold all the nodes with their ID as key.
   
   \par  
-  The time complexity of Prim's algorithm is O(m*log(n))
+  The time complexity of Prim's algorithm is O(m*log(n)). But our algorithm is O((n-1)*log(m)) in time complexity. You could argue that the time complexity should be O(n*(n-1)*log(n)) since we have a time complexity of O((n-1)*log(m)) in our O(n) loop. Since we can only  add each edge in two ways we get 2*m*log(m) which simplify to the time complexity O(m*log(n)).
+  
+  \par But O(m*log(m)) is reallly the same time complexity as O(m*lo(n)) since, in worst case, m = ((n - 1) + (n - 2) + ... + (n-n) = (n-1)*n/2~= n*n.
 
 \end{document}
