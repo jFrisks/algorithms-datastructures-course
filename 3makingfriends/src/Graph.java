@@ -26,6 +26,7 @@ public class Graph {
         //Since we don't want to go out of bounds on the far end.
         rows = rows - 1;
 
+        //Create start node and add it to the tree
         startNode = new Node(indata[2]);
         nodes.put((int)startNode.ID, startNode);
 

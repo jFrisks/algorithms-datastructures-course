@@ -9,11 +9,15 @@ import java.util.List;
 
 public class ClosestPair {
 
+    final static int MINIMAL_DIVIDE = 3;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/sample/1.in"));
 
         List parsedPoints = parse(br);
         System.out.println("Done");
+
+        conquerAndDivide(parsedPoints);
     }
 
     static List<Point2D> parse(BufferedReader br) throws IOException {
@@ -42,8 +46,33 @@ public class ClosestPair {
         return points;
     }
 
+    public static void conquerAndDivide(List<Point2D> points) {
+        //Sortera hela listan efter x-kordinat
 
-    public static void ConquerAndDivide(){
-        System.out.println("TODO");
+        points.sort((o1, o2) -> {
+            if (o1.getX() < o2.getX()) return -1;
+            else if (o1.getX() > o2.getX()) return 1;
+            else return 0;
+        });
+
+        closest(points);
+
+    }
+
+    private static int closest(List<Point2D> points) {
+
+        // Basfall  - om points size är mindre än n^2-calc gränsens
+            //DO STUFF
+
+
+
+        int median = Math.round(points.size()/2);
+        List<Point2D> leftPoints = points.subList(0, median);
+        List<Point2D> rightPoints = points.subList(median + 1, points.size() - 1);
+
+        int leftMin = closest(leftPoints);
+        int rightMin = closest(rightPoints);
+
+        //Min of leftMin and rightMin
     }
 }
