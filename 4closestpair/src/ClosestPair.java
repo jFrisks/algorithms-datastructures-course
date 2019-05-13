@@ -62,9 +62,14 @@ public class ClosestPair {
     private static int closest(List<Point2D> points) {
 
         // Basfall  - om points size är mindre än n^2-calc gränsens
-            //DO STUFF
+            //DO speciial STUFF - return min dist
 
 
+        if(points.size() < MINIMAL_DIVIDE){
+            //TODO calc min value
+
+            return minValue;
+        }
 
         int median = Math.round(points.size()/2);
         List<Point2D> leftPoints = points.subList(0, median);
@@ -72,6 +77,8 @@ public class ClosestPair {
 
         int leftMin = closest(leftPoints);
         int rightMin = closest(rightPoints);
+
+
 
         //Min of leftMin and rightMin
     }
