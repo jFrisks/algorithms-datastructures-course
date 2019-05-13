@@ -21,7 +21,9 @@ public class ClosestPair {
     final static int MINIMAL_DIVIDE = 3;
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/secret/2med.in"));
+        //BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/secret/2med.in"));
+
+	BufferedReader br = new BufferedReader(new FileReader(new InputStreamReader(System.in)));
 
         List parsedPoints = parse(br);
         System.out.println("Done");
