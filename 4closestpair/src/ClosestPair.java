@@ -24,13 +24,13 @@ public class ClosestPair {
     final static int MINIMAL_DIVIDE = 3;
 
     public static void main(String[] args) throws IOException {
-        //BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/secret/0mini.in"));
+        BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/secret/1small.in"));
 
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         List parsedPoints = parse(br);
 
-        float result = (float)conquerAndDivide(parsedPoints);
+        double result = conquerAndDivide(parsedPoints);
         DecimalFormat df = new DecimalFormat("#.######");
         DecimalFormatSymbols dfs = new DecimalFormatSymbols();
         dfs.setDecimalSeparator('.');
