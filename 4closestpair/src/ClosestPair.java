@@ -1,11 +1,11 @@
 import javafx.geometry.Point2D;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.math.RoundingMode;
+import java.text.DecimalFormat;
 
 public class ClosestPair {
     /** PROBLEMS to tackle
@@ -23,14 +23,17 @@ public class ClosestPair {
     public static void main(String[] args) throws IOException {
         //BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/secret/2med.in"));
 
-	BufferedReader br = new BufferedReader(new FileReader(new InputStreamReader(System.in)));
+	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         List parsedPoints = parse(br);
         System.out.println("Done");
 
         double result = conquerAndDivide(parsedPoints);
+	
+	DecimalFormat df = new DecimalFormat("#.######");
+	df.setRoundingMode(RoundingMode.HALF_UP);
 
-        System.out.println(result);
+        System.out.println(df.format(result));
     }
 
     static List<Point2D> parse(BufferedReader br) throws IOException {
