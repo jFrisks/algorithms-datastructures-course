@@ -21,7 +21,7 @@ public class ClosestPair {
     final static int MINIMAL_DIVIDE = 3;
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/sample/2.in"));
+        BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/secret/2med.in"));
 
         List parsedPoints = parse(br);
         System.out.println("Done");
@@ -98,13 +98,13 @@ public class ClosestPair {
 
         //S.add - loop leftArrays element from median until dist-elemen.getX < partitionMin
         int leftBound = medianXCoordIndex;
-        while(points.get(leftBound).getX() > medianXCoord - partitionsMin + 1) {
+        while(points.get(leftBound).getX() > medianXCoord - partitionsMin + 1 && leftBound > 0) {
             leftBound -= 1;
         }
 
         //S add - Same for right array
         int rightBound = medianXCoordIndex;
-        while(points.get(rightBound).getX() < medianXCoord + partitionsMin - 1) {
+        while(points.get(rightBound).getX() < medianXCoord + partitionsMin - 1 && rightBound < points.size() - 1) {
             rightBound += 1;
         }
 
