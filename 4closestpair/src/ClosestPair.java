@@ -1,6 +1,7 @@
 import javafx.geometry.Point2D;
 
 import java.io.*;
+import java.text.DecimalFormatSymbols;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -21,9 +22,9 @@ public class ClosestPair {
     final static int MINIMAL_DIVIDE = 3;
 
     public static void main(String[] args) throws IOException {
-        //BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/secret/2med.in"));
+        BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/secret/1small.in"));
 
-	BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         List parsedPoints = parse(br);
         System.out.println("Done");
@@ -31,6 +32,9 @@ public class ClosestPair {
         double result = conquerAndDivide(parsedPoints);
 	
 	DecimalFormat df = new DecimalFormat("#.######");
+	DecimalFormatSymbols dfs = new DecimalFormatSymbols();
+	dfs.setDecimalSeparator('.');
+	df.setDecimalFormatSymbols(dfs);
 	df.setRoundingMode(RoundingMode.HALF_UP);
 
         System.out.println(df.format(result));
