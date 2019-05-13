@@ -1,14 +1,10 @@
-import javafx.geometry.Point2D;
-
 import java.io.*;
 import java.text.DecimalFormatSymbols;
-import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.math.RoundingMode;
 import java.text.DecimalFormat;
-import java.util.Locale;
 
 public class ClosestPair {
     /** PROBLEMS to tackle
@@ -42,10 +38,10 @@ public class ClosestPair {
         System.out.println(df.format(result));
     }
 
-    static List<Point2D> parse(BufferedReader br) throws IOException {
-        //TODO: Floats are slower, write our own Point-class with int or long
+    static List<PointInt> parse(BufferedReader br) throws IOException {
+        //TODO: Floats are slower, write our own PointInt-class with int or long
 
-        List<Point2D> points;
+        List<PointInt> points;
         int numberOfPlayer;
 
         StringBuilder stringBuilder = new StringBuilder();
@@ -61,14 +57,14 @@ public class ClosestPair {
         points = new ArrayList<>(numberOfPlayer);
 
         for (int i = 1; i <= numberOfPlayer * 2; i += 2) {
-            Point2D newPoint = new Point2D(indata[i], indata[i+1]);
+            PointInt newPoint = new PointInt(indata[i], indata[i+1]);
             points.add(newPoint);
         }
 
         return points;
     }
 
-    public static double conquerAndDivide(List<Point2D> points) {
+    public static double conquerAndDivide(List<PointInt> points) {
         //Sortera hela listan efter x-kordinat
 
         points.sort((o1, o2) -> {
@@ -81,14 +77,14 @@ public class ClosestPair {
 
     }
 
-    private static double closest(List<Point2D> points) {
+    private static double closest(List<PointInt> points) {
 
 
         if(points.size() < MINIMAL_DIVIDE){
             //TODO calc min value of remaining
             double minDist = Float.MAX_VALUE;
-            for(Point2D point : points){
-                for(Point2D otherPoint : points){
+            for(PointInt point : points){
+                for(PointInt otherPoint : points){
                     double tmpDist = point.distance(otherPoint);
                     if (tmpDist < minDist && !otherPoint.equals(point)) minDist = tmpDist;
                 }
@@ -100,8 +96,8 @@ public class ClosestPair {
         int medianXCoordIndex = Math.round(points.size()/2);
         double medianXCoord = points.get(medianXCoordIndex).getX();
 
-        List<Point2D> leftPoints = points.subList(0, medianXCoordIndex);
-        List<Point2D> rightPoints = points.subList(medianXCoordIndex, points.size());
+        List<PointInt> leftPoints = points.subList(0, medianXCoordIndex);
+        List<PointInt> rightPoints = points.subList(medianXCoordIndex, points.size());
 
         double leftMin = closest(leftPoints);
         double rightMin = closest(rightPoints);
@@ -124,10 +120,10 @@ public class ClosestPair {
         return Double.min(partitionsMin, stripMin);
     }
 
-    private static double getStripMin(List<Point2D> points, int leftBound, int rightBound) {
+    private static double getStripMin(List<PointInt> points, int leftBound, int rightBound) {
         double stripMin = Float.MAX_VALUE;
         //Sort S
-        List<Point2D> S = points.subList(leftBound, rightBound + 1);
+        List<PointInt> S = points.subList(leftBound, rightBound + 1);
         S.sort((o1, o2) -> {
             if (o1.getY() < o2.getY()) return -1;
             else if (o1.getY() > o2.getY()) return 1;
@@ -142,9 +138,9 @@ public class ClosestPair {
             //Problems: Index out of bounds. 2nd - keep track of minVal
 
             int stripRightBound = (i + 15 > S.size() - 1) ? S.size() - 1 : i + 15;
-            List<Point2D> box = S.subList(i + 1, stripRightBound);
+            List<PointInt> box = S.subList(i + 1, stripRightBound);
 
-            for (Point2D other : box) {
+            for (PointInt other : box) {
                 double tmpDist = S.get(i).distance(other);
                 if (tmpDist < stripMin) stripMin = tmpDist;
             }
