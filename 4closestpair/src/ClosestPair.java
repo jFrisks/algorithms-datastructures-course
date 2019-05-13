@@ -20,22 +20,28 @@ public class ClosestPair {
     final static int MINIMAL_DIVIDE = 3;
 
     public static void main(String[] args) throws IOException {
-        BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/secret/1small.in"));
-
-        //BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        //BufferedReader br = new BufferedReader(new FileReader("./4closestpair/data/secret/6huger.in"));
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         List parsedPoints = parse(br);
 
+        //long startTime = System.currentTimeMillis();
         double result = conquerAndDivide(parsedPoints);
+        //System.out.println((System.currentTimeMillis() - startTime));
+        DecimalFormat df = getDecimalFormat();
+
+        System.out.println(df.format(result));
+    }
+
+    private static DecimalFormat getDecimalFormat() {
         DecimalFormat df = new DecimalFormat("#.######");
         DecimalFormatSymbols dfs = new DecimalFormatSymbols();
         dfs.setDecimalSeparator('.');
         df.setDecimalFormatSymbols(dfs);
-	    df.setMinimumFractionDigits(6);
+        df.setMinimumFractionDigits(6);
         df.setMaximumFractionDigits(6);
-    	df.setRoundingMode(RoundingMode.HALF_UP);
-
-        System.out.println(df.format(result));
+        df.setRoundingMode(RoundingMode.HALF_UP);
+        return df;
     }
 
     static List<PointInt> parse(BufferedReader br) throws IOException {
@@ -65,30 +71,38 @@ public class ClosestPair {
     }
 
     public static double conquerAndDivide(List<PointInt> points) {
-        //Sortera hela listan efter x-kordinat
-
         points.sort((o1, o2) -> {
             if (o1.getX() < o2.getX()) return -1;
             else if (o1.getX() > o2.getX()) return 1;
             else return 0;
         });
-
        return closest(points);
-
     }
 
     private static double closest(List<PointInt> points) {
-
-
+        //BASE CASE
         if(points.size() < MINIMAL_DIVIDE){
             //TODO calc min value of remaining
             double minDist = Float.MAX_VALUE;
+
+            for(int p1I = 0; p1I < points.size(); p1I++){
+                for(int p2I = p1I; p2I < points.size(); p2I++){
+                    PointInt p1 = points.get(p1I);
+                    PointInt p2 = points.get(p2I);
+                    double tmpDist = p1.distance(p2);
+                    if (tmpDist < minDist && !p2.equals(p1)) minDist = tmpDist;
+                }
+            }
+
+            /*
             for(PointInt point : points){
                 for(PointInt otherPoint : points){
                     double tmpDist = point.distance(otherPoint);
                     if (tmpDist < minDist && !otherPoint.equals(point)) minDist = tmpDist;
                 }
             }
+            */
+
             return minDist;
         }
 
