@@ -8,6 +8,15 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ClosestPair {
+    /** PROBLEMS to tackle
+     * - Dela
+     *
+     *
+     *
+     * OPTIMIZING
+     * - Fix n^2-func in basecase for calc minvaues.
+     * */
+
 
     final static int MINIMAL_DIVIDE = 3;
 
@@ -59,27 +68,39 @@ public class ClosestPair {
 
     }
 
-    private static int closest(List<Point2D> points) {
-
-        // Basfall  - om points size är mindre än n^2-calc gränsens
-            //DO speciial STUFF - return min dist
-
+    private static double closest(List<Point2D> points) {
+        double stripMin = Float.MAX_VALUE;
 
         if(points.size() < MINIMAL_DIVIDE){
-            //TODO calc min value
-
-            return minValue;
+            //TODO calc min value of remaining
+            double minDist = Float.MAX_VALUE;
+            for(Point2D point : points){
+                for(Point2D otherPoint : points){
+                    double tmpDist = point.distance(otherPoint);
+                    if (tmpDist < minDist) minDist = tmpDist;
+                }
+            }
+            return minDist;
         }
 
-        int median = Math.round(points.size()/2);
-        List<Point2D> leftPoints = points.subList(0, median);
-        List<Point2D> rightPoints = points.subList(median + 1, points.size() - 1);
+        //NOMRAL CASE
+        int medianXCoordIndex = Math.round(points.size()/2);
+        double medianXCoord = points.get(medianXCoordIndex).getX();
 
-        int leftMin = closest(leftPoints);
-        int rightMin = closest(rightPoints);
+        List<Point2D> leftPoints = points.subList(0, medianXCoordIndex);
+        List<Point2D> rightPoints = points.subList(medianXCoordIndex + 1, points.size() - 1);
+
+        double leftMin = closest(leftPoints);
+        double rightMin = closest(rightPoints);
+        double partitionsMin = Double.min(leftMin, rightMin);
 
 
+        //S.add - loop leftArrays element from median until dist-elemen.getX < partitionMin
+        //S add - Same for right array
+        //Sort S
 
-        //Min of leftMin and rightMin
+        //for each S -> check closest 15 points to the right of the array. Save minValue if
+
+        return Double.min(partitionsMin, stripMin);
     }
 }
