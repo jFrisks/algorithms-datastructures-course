@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/1stablemarriage/1stablemarriage.iml" filepath="$PROJECT_DIR$/1stablemarriage/1stablemarriage.iml" />
       <module fileurl="file://$PROJECT_DIR$/2wordladders/2wordladders.iml" filepath="$PROJECT_DIR$/2wordladders/2wordladders.iml" />
       <module fileurl="file://$PROJECT_DIR$/3makingfriends/3makingfriends.iml" filepath="$PROJECT_DIR$/3makingfriends/3makingfriends.iml" />
+      <module fileurl="file://$PROJECT_DIR$/4closestpair/4closestpair.iml" filepath="$PROJECT_DIR$/4closestpair/4closestpair.iml" />
     </modules>
   </component>
 </project>
