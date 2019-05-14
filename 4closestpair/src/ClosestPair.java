@@ -1,10 +1,5 @@
 import java.io.*;
-import java.text.DecimalFormatSymbols;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.math.RoundingMode;
-import java.text.DecimalFormat;
+import java.util.*;
 
 public class ClosestPair {
     /** PROBLEMS to tackle
@@ -25,32 +20,15 @@ public class ClosestPair {
 
         List parsedPoints = parse(br);
 
-        //long startTime = System.currentTimeMillis();
         double result = conquerAndDivide(parsedPoints);
-        //System.out.println((System.currentTimeMillis() - startTime));
-        DecimalFormat df = getDecimalFormat();
-
-        System.out.println(df.format(result));
-    }
-
-    private static DecimalFormat getDecimalFormat() {
-        DecimalFormat df = new DecimalFormat("#.######");
-        DecimalFormatSymbols dfs = new DecimalFormatSymbols();
-        dfs.setDecimalSeparator('.');
-        df.setDecimalFormatSymbols(dfs);
-        df.setMinimumFractionDigits(6);
-        df.setMaximumFractionDigits(6);
-        df.setRoundingMode(RoundingMode.HALF_UP);
-        return df;
+        String formattedResult = String.format(Locale.US, "%.6f", result);
+        System.out.println(formattedResult);
     }
 
     static List<PointInt> parse(BufferedReader br) throws IOException {
-        //TODO: Floats are slower, write our own PointInt-class with int or long
-
+        StringBuilder stringBuilder = new StringBuilder();
         List<PointInt> points;
         int numberOfPlayer;
-
-        StringBuilder stringBuilder = new StringBuilder();
 
         String line;
         while ((line = br.readLine()) != null) {
@@ -71,12 +49,12 @@ public class ClosestPair {
     }
 
     public static double conquerAndDivide(List<PointInt> points) {
-        points.sort((o1, o2) -> {
-            if (o1.getX() < o2.getX()) return -1;
-            else if (o1.getX() > o2.getX()) return 1;
-            else return 0;
-        });
-       return closest(points);
+        points.sort(Comparator.comparingInt(PointInt::getX));
+        //List<PointInt> pointsX = new ArrayList<>(points);
+        //List<PointInt> pointsY = new ArrayList<>(points);
+        //pointsX.sort(Comparator.comparingInt(PointInt::getX));
+        //pointsY.sort(Comparator.comparingInt(PointInt::getY));
+        return closest(points);
     }
 
     private static double closest(List<PointInt> points) {
@@ -94,7 +72,7 @@ public class ClosestPair {
                 }
             }
 
-            /*
+            /* WHY IS THIS NOT SLOWER THAN THE ABOVE? -> Because Compiler...
             for(PointInt point : points){
                 for(PointInt otherPoint : points){
                     double tmpDist = point.distance(otherPoint);
@@ -135,22 +113,16 @@ public class ClosestPair {
     }
 
     private static double getStripMin(List<PointInt> points, int leftBound, int rightBound) {
+        /** OPTIMIZATION: Sort in the beginning of divide and conquer, not for each strip. We get extra log factor */
         double stripMin = Float.MAX_VALUE;
-        //Sort S
+
         List<PointInt> S = points.subList(leftBound, rightBound + 1);
-        S.sort((o1, o2) -> {
-            if (o1.getY() < o2.getY()) return -1;
-            else if (o1.getY() > o2.getY()) return 1;
-            else return 0;
-        });
+        S.sort(Comparator.comparingInt(PointInt::getY));
 
         if (S.size() < 2) stripMin = Double.MAX_VALUE;
 
-        //for each S -> check closest 15 points to the right of the array. Save minValue if
+        //for each S -> check closest 15 points to the right of the array. Can only exist one point in each "partitionsMinbox". 4 boxes in width, makes 15 boxes to check
         for (int i = 0; i < S.size() - 1; i++) {
-            //Loop through next 15 points in array and check their distance
-            //Problems: Index out of bounds. 2nd - keep track of minVal
-
             int stripRightBound = (i + 15 > S.size() - 1) ? S.size() - 1 : i + 15;
             List<PointInt> box = S.subList(i + 1, stripRightBound);
 
@@ -159,7 +131,6 @@ public class ClosestPair {
                 if (tmpDist < stripMin) stripMin = tmpDist;
             }
         }
-        ;
         return stripMin;
     }
 }
