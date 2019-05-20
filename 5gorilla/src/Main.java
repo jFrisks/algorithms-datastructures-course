@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader("./5gorilla/data/secret/1small.in"));
+            br = new BufferedReader(new FileReader("./5gorilla/data/secret/0mini.in"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -21,5 +21,6 @@ public class Main {
         }
 
         StringAlignmentDP.doStringAlignments(parser);
+        System.out.println("Done");
     }
 }

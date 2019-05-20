@@ -24,14 +24,14 @@ public class StringAlignmentDP {
         for(int j = 0; j < m; j++){
             for(int i = 0; i < n; i++){
                 //Handle outOfbOunds - if one index == 0 -> give starCost
-                if(i <= 0 && j <= 0) OPTTable[j][i] = parseCost.getCost("*");
-                else if(i <= 0) OPTTable[j][i] = (j+1)*parseCost.getCost("*");
-                else if(j <= 0) OPTTable[j][i] = (i+1)*parseCost.getCost("*");
+                if(i <= 0 && j <= 0) OPTTable[j][i] = 0;
+                else if(i <= 0) OPTTable[j][i] = (j)*parseCost.getCost("*");
+                else if(j <= 0) OPTTable[j][i] = (i)*parseCost.getCost("*");
                 else{
-                    int downCost = parseCost.getCost("*") + OPTTable[j-1][i];
+                    int upCost = parseCost.getCost("*") + OPTTable[j-1][i];
                     int leftCost = parseCost.getCost("*") + OPTTable[j][i-1];
                     int diagonalCost = cost(j, i, parseCost, wordX, wordY) + OPTTable[j-1][i-1];
-                    int thisTotalBestPoints = Integer.max(diagonalCost, Integer.max(leftCost, downCost));
+                    int thisTotalBestPoints = Integer.max(diagonalCost, Integer.max(leftCost, upCost));
                     OPTTable[j][i] = thisTotalBestPoints;
                 }
             }
