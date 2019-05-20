@@ -24,6 +24,8 @@ public class StringAlignmentParser {
             for (int j = i; j < characters.length; j++) {
                 String key = (characters[i] + characters[j]).toUpperCase();
                 int value = Integer.parseInt(in[i + j * characters.length]);
+
+                key = sortKey(key);
                 combination.put(key, value);
             }
         }
@@ -52,6 +54,17 @@ public class StringAlignmentParser {
             return combination.get(key);
         } else {
             return combination.get(keyFlipped);
+        }
+    }
+
+    public String sortKey(String key) {
+        key = key.toUpperCase();
+        String keyFlipped = new StringBuilder(key).reverse().toString();
+
+        if (key.charAt(0) - key.charAt(1) <= 0) {
+            return key;
+        } else {
+            return keyFlipped;
         }
     }
 
