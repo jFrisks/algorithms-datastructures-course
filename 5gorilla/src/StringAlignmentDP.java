@@ -30,9 +30,9 @@ public class StringAlignmentDP {
                 else{
                     int downCost = parseCost.getCost("*") + OPTTable[j-1][i];
                     int leftCost = parseCost.getCost("*") + OPTTable[j][i-1];
-                    int diagonalCost = cost(i, j, parseCost, wordX, wordY) + OPTTable[j-1][i-1];
+                    int diagonalCost = cost(j, i, parseCost, wordX, wordY) + OPTTable[j-1][i-1];
                     int thisTotalBestPoints = Integer.max(diagonalCost, Integer.max(leftCost, downCost));
-                    OPTTable[i][j] = thisTotalBestPoints;
+                    OPTTable[j][i] = thisTotalBestPoints;
                 }
             }
         }
@@ -59,7 +59,7 @@ public class StringAlignmentDP {
         int goUpCost = Integer.MIN_VALUE;
         int goDiagonalCost = Integer.MIN_VALUE;
 
-        if(i <= 0 && j <= 0) return buildPair;
+        if(i < 0 && j < 0) return buildPair;
         if(i >= 1 && j >= 0) goLeftCost = costTable[j][i-1];
         if(j >= 1 && i >= 0) goUpCost = costTable[j-1][i];
         if(j >= 1 && i >= 1) goDiagonalCost = costTable[j-1][i-1];
@@ -68,15 +68,15 @@ public class StringAlignmentDP {
         String oldY = buildPair.getY();
 
         if(goDiagonalCost >= goLeftCost && goDiagonalCost >= goUpCost) {
-            buildPair = new Pair( inputPair.getX().charAt(i) + oldX, inputPair.getY().charAt(j-1) + oldY);
+            buildPair = new Pair( inputPair.getX().charAt(i) + oldX, inputPair.getY().charAt(j) + oldY);
             return buildBestPair(inputPair, buildPair, j-1, i-1, costTable);
         }
         else if(goUpCost >= goLeftCost && goUpCost >= goDiagonalCost) {
-            buildPair = new Pair("*" + oldX, inputPair.getY().charAt(j-1) + oldY);
-            return buildBestPair(inputPair, buildPair, j - 1, i, costTable);
+            buildPair = new Pair("*" + oldX, inputPair.getY().charAt(j) + oldY);
+            return buildBestPair(inputPair, buildPair, j-1, i, costTable);
         }
         else {
-            buildPair = new Pair(inputPair.getX().charAt(i-1) + oldX, "*" + oldY);
+            buildPair = new Pair(inputPair.getX().charAt(i) + oldX, "*" + oldY);
             return buildBestPair(inputPair, buildPair, j, i - 1, costTable);
         }
     }
