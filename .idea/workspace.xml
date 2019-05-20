@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ad37ec6-5169-419a-97b5-eec673bbbc60" name="Default Changelist" comment="" />
+    <list default="true" id="7ad37ec6-5169-419a-97b5-eec673bbbc60" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,37 +32,41 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="ans" value="24" />
+          <entry key="gitignore" value="1" />
           <entry key="groovy" value="1" />
-          <entry key="iml" value="1" />
+          <entry key="iml" value="2" />
           <entry key="in" value="25" />
-          <entry key="java" value="34" />
+          <entry key="java" value="36" />
           <entry key="md" value="2" />
           <entry key="sh" value="1" />
           <entry key="tex" value="4" />
+          <entry key="yml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="Groovy" value="1" />
-          <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="34" />
+          <entry key="IDEA_MODULE" value="2" />
+          <entry key="JAVA" value="36" />
           <entry key="Markdown" value="2" />
-          <entry key="PLAIN_TEXT" value="54" />
+          <entry key="PLAIN_TEXT" value="55" />
+          <entry key="YAML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="ans" value="1" />
-          <entry key="dummy" value="24" />
-          <entry key="java" value="15269" />
+          <entry key="dummy" value="26" />
+          <entry key="gitignore" value="31" />
+          <entry key="java" value="15270" />
           <entry key="tex" value="632" />
-          <entry key="txt" value="2069" />
+          <entry key="txt" value="2093" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="15269" />
-          <entry key="PLAIN_TEXT" value="2726" />
+          <entry key="JAVA" value="15270" />
+          <entry key="PLAIN_TEXT" value="2783" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -73,15 +80,6 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/3makingfriends/src/MST.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="735">
-              <caret line="49" selection-start-line="49" selection-end-line="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/4closestpair/src/ClosestPair.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
@@ -94,31 +92,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/2med.ans">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/6huger.in">
+        <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentParser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="4" selection-start-column="4" selection-end-column="7" />
+              <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/6huger.ans">
+        <entry file="file://$PROJECT_DIR$/_config.yml">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/src/PointInt.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/5gorilla/5gorilla.iml">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -191,6 +198,8 @@
         <option value="$PROJECT_DIR$/3makingfriends/src/Main.java" />
         <option value="$PROJECT_DIR$/4closestpair/src/PointInt.java" />
         <option value="$PROJECT_DIR$/4closestpair/src/ClosestPair.java" />
+        <option value="$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -219,6 +228,11 @@
               <item name="algorithms-datastructures-course" type="b2602c69:ProjectViewProjectNode" />
               <item name="5gorilla" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="algorithms-datastructures-course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="5gorilla" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -233,7 +247,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558333947579" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558338108420" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -400,7 +414,7 @@
       <workItem from="1557155561538" duration="41382000" />
       <workItem from="1557732675695" duration="14128000" />
       <workItem from="1557822234257" duration="7001000" />
-      <workItem from="1558269419791" duration="461000" />
+      <workItem from="1558269419791" duration="1764000" />
     </task>
     <task id="LOCAL-00001" summary="Added project structure">
       <created>1554451265350</created>
@@ -626,7 +640,14 @@
       <option name="project" value="LOCAL" />
       <updated>1557824627032</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Code Frame for next lab">
+      <created>1558333973490</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1558333973490</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -659,10 +680,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94142000" />
+    <option name="totallyTimeSpent" value="95445000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20386267" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -701,7 +723,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="BFS  update" />
     <MESSAGE value="BFS algo done. We need to fix output." />
     <MESSAGE value="BFS algo first version completed. Added getPathLength() and break at finish-find" />
     <MESSAGE value="Ctreated test for BFS and corrected small change in BFS" />
@@ -726,7 +747,8 @@
     <MESSAGE value="Base case and structure on algo" />
     <MESSAGE value="Updated for loop, theoretically to half the constant time complexity. But not noticeable. Compiler does it job..." />
     <MESSAGE value="Write more compact code for sort methods etc" />
-    <option name="LAST_COMMIT_MESSAGE" value="Write more compact code for sort methods etc" />
+    <MESSAGE value="Code Frame for next lab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Code Frame for next lab" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -768,36 +790,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/function/Predicate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="48" column="12" selection-start-line="48" selection-start-column="12" selection-end-line="48" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2wordladders/data/secret/5large1.ans">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2wordladders/src/Pairs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="5" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2wordladders/src/BFS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="43" selection-start-line="9" selection-start-column="43" selection-end-line="9" selection-end-column="43" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2wordladders/data/sample/1.ans">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/2wordladders/data/sample/1.in">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1036,6 +1028,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_config.yml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/5gorilla.iml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="36" lean-forward="true" selection-start-column="36" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="5" lean-forward="true" selection-start-line="12" selection-start-column="5" selection-end-line="12" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
   </component>
   <component name="masterDetails">
     <states>
@@ -1093,6 +1112,7 @@
             <option name="proportions">
               <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
