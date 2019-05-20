@@ -20,9 +20,9 @@ public class StringAlignmentParser {
         }
 
         String[] in = stringBuilder.toString().split(" ");
-        for (int i = 0; i < characters.length - 1; i++) {
-            for (int j = i; j < characters.length - 1; j++) {
-                String key = characters[i] + characters[j];
+        for (int i = 0; i < characters.length; i++) {
+            for (int j = i; j < characters.length; j++) {
+                String key = (characters[i] + characters[j]).toUpperCase();
                 int value = Integer.parseInt(in[i + j * characters.length]);
                 combination.put(key, value);
             }
@@ -35,13 +35,16 @@ public class StringAlignmentParser {
         for (int i = characters.length*characters.length + 1; i < in.length - 1; i = i + 2) {
             wordPairs.add(new Pair(in[i], in[i + 1]));
         }
+
+        System.out.println(combination);
     }
 
     public int getCost(String key) {
 
+        key = key.toUpperCase();
         String keyFlipped = new StringBuilder(key).reverse().toString();
 
-        if (key.charAt(0) - key.charAt(1) < 0) {
+        if (key.charAt(0) - key.charAt(1) <= 0) {
             return combination.get(key);
         } else {
             return combination.get(keyFlipped);
