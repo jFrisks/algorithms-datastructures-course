@@ -14,11 +14,12 @@ public class Main {
         }
 
         StringAlignmentParser parser = new StringAlignmentParser();
-
         try {
             parser.parse(br);
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        StringAlignmentDP.doStringAlignments(parser);
     }
 }

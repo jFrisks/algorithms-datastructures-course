@@ -44,6 +44,10 @@ public class StringAlignmentParser {
         key = key.toUpperCase();
         String keyFlipped = new StringBuilder(key).reverse().toString();
 
+        if (key.equals("*")) {
+            return combination.get(key);
+        }
+
         if (key.charAt(0) - key.charAt(1) <= 0) {
             return combination.get(key);
         } else {
