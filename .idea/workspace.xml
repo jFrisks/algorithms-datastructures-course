@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ad37ec6-5169-419a-97b5-eec673bbbc60" name="Default Changelist" comment="Updated algorithm to not use recursion">
+    <list default="true" id="7ad37ec6-5169-419a-97b5-eec673bbbc60" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/5gorilla/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/5gorilla/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java" beforeDir="false" afterPath="$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java" afterDir="false" />
@@ -87,7 +87,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="ans" value="4" />
+          <entry key="ans" value="5" />
           <entry key="in" value="4" />
           <entry key="java" value="10" />
         </counts>
@@ -95,21 +95,21 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="JAVA" value="10" />
-          <entry key="PLAIN_TEXT" value="8" />
+          <entry key="PLAIN_TEXT" value="9" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="gitignore" value="1" />
           <entry key="in" value="466" />
-          <entry key="java" value="3354" />
-          <entry key="txt" value="127" />
+          <entry key="java" value="3428" />
+          <entry key="txt" value="173" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="3354" />
-          <entry key="PLAIN_TEXT" value="594" />
+          <entry key="JAVA" value="3428" />
+          <entry key="PLAIN_TEXT" value="640" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.vcs.git.usages">
@@ -135,11 +135,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="152" column="13" selection-start-line="152" selection-start-column="13" selection-end-line="152" selection-end-column="13" />
+            <state relative-caret-position="160">
+              <caret line="135" column="27" selection-start-line="135" selection-start-column="27" selection-end-line="135" selection-end-column="27" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -164,7 +164,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/5gorilla/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="231">
@@ -183,6 +183,11 @@
               <caret line="2" column="177" selection-start-line="2" selection-start-column="104" selection-end-line="2" selection-end-column="177" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/1small.ans">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -244,8 +249,8 @@
         <option value="$PROJECT_DIR$/5gorilla/data/sample/custom.in" />
         <option value="$PROJECT_DIR$/5gorilla/src/Pair.java" />
         <option value="$PROJECT_DIR$/5gorilla/src/StringAlignmentParser.java" />
-        <option value="$PROJECT_DIR$/5gorilla/src/Main.java" />
         <option value="$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java" />
+        <option value="$PROJECT_DIR$/5gorilla/src/Main.java" />
       </list>
     </option>
   </component>
@@ -299,7 +304,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558451147373" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558452126847" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -576,7 +581,7 @@
       <workItem from="1557732675695" duration="14128000" />
       <workItem from="1557822234257" duration="7001000" />
       <workItem from="1558269419791" duration="1764000" />
-      <workItem from="1558343425403" duration="29153000" />
+      <workItem from="1558343425403" duration="30045000" />
     </task>
     <task id="LOCAL-00001" summary="Added project structure">
       <created>1554451265350</created>
@@ -858,7 +863,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558449682501</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="Fixed algorithm, but it is now awfully ugly">
+      <created>1558451227333</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1558451227333</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -891,7 +903,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="124620000" />
+    <option name="totallyTimeSpent" value="125512000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -933,7 +945,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17310444" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17310444" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -944,7 +956,7 @@
       <window_info anchor="bottom" id="Flutter Performance" order="1" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49928468" visible="true" weight="0.3280098" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49928468" visible="true" weight="0.3280098" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.3980344" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -976,7 +988,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Static and private for bfs run" />
     <MESSAGE value="Added parse method. GraphCreate is still not implemented." />
     <MESSAGE value="Added base of createGraph-method." />
     <MESSAGE value="Everything seem to be working. Added Pairs with start and finish. Changed Map&lt;String, List&gt; to List&lt;Pairs&gt;. Easy to iterate over the pairs so everything gets in right order." />
@@ -1001,7 +1012,8 @@
     <MESSAGE value="Fixed map key values" />
     <MESSAGE value="Created Main and fixed parsing" />
     <MESSAGE value="Updated algorithm to not use recursion" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated algorithm to not use recursion" />
+    <MESSAGE value="Fixed algorithm, but it is now awfully ugly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed algorithm, but it is now awfully ugly" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1335,13 +1347,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/1small.ans">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/5gorilla/src/Main.java">
+    <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="11" column="79" selection-start-line="11" selection-start-column="79" selection-end-line="11" selection-end-column="79" />
+        <state relative-caret-position="160">
+          <caret line="135" column="27" selection-start-line="135" selection-start-column="27" selection-end-line="135" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1355,10 +1364,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java">
+    <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/1small.ans">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="152" column="13" selection-start-line="152" selection-start-column="13" selection-end-line="152" selection-end-column="13" />
+        <state relative-caret-position="231">
+          <caret line="11" column="79" selection-start-line="11" selection-start-column="79" selection-end-line="11" selection-end-column="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

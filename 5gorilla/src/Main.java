@@ -9,7 +9,7 @@ public class Main {
         BufferedReader br = null;
         try {
             //br = new BufferedReader(new FileReader("./5gorilla/data/sample/custom.in"));
-            br = new BufferedReader(new FileReader("./5gorilla/data/secret/0mini.in"));
+            br = new BufferedReader(new FileReader("./5gorilla/data/secret/2med.in"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }

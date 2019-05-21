@@ -117,6 +117,7 @@ public class StringAlignmentDP {
         while (!(i == 0 && i == 0)) {
             int goLeftCost = Integer.MIN_VALUE;
             int goUpCost = Integer.MIN_VALUE;
+            boolean atEdge = (i*j == 0);
 
             char currentXChar = '*';
             char currentYChar = '*';
@@ -132,18 +133,10 @@ public class StringAlignmentDP {
 
             String key = "" + currentXChar + currentYChar;
 
-            if (i > 0 && j > 0) {
-                if (costTable[j][i] == costTable[j-1][i-1] + sap.getCost(key)) {
-                    buildPair.prependX(currentXChar).prependY(currentYChar);
-                    i--;
-                    j--;
-                } else if (goLeftCost >= goUpCost) {
-                    buildPair.prependX(currentXChar).prependY('*');
-                    i--;
-                } else if (goLeftCost <= goUpCost){
-                    buildPair.prependX('*').prependY(currentYChar);
-                    j--;
-                }
+            if (!atEdge && costTable[j][i] == costTable[j-1][i-1] + sap.getCost(key)) {
+                buildPair.prependX(currentXChar).prependY(currentYChar);
+                i--;
+                j--;
             } else if (goLeftCost >= goUpCost) {
                 buildPair.prependX(currentXChar).prependY('*');
                 i--;
