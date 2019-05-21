@@ -13,4 +13,14 @@ public class Pair {
     public String getY() {
         return Y;
     }
+
+    public Pair prependX(char a) {
+        X = a + X;
+        return this;
+    }
+
+    public Pair prependY(char a) {
+        Y = a + Y;
+        return this;
+    }
 }
