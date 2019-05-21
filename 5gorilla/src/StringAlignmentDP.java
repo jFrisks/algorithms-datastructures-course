@@ -54,7 +54,7 @@ public class StringAlignmentDP {
         }
     }
 
-    private static Pair buildBestPair(Pair inputPair, Pair buildPair, int j, int i, int[][] costTable, StringAlignmentParser sap) {
+    private static Pair BestPair(Pair inputPair, Pair buildPair, int j, int i, int[][] costTable, StringAlignmentParser sap) {
         /*
 
         int goDiagonalCost = Integer.MIN_VALUE;
@@ -96,7 +96,7 @@ public class StringAlignmentDP {
             return buildPair.prependX(currentXChar).prependY(currentYChar);
         }
 
-        String key = (new StringBuilder()).append(currentXChar).append(currentYChar).toString();
+        String key = "" + currentXChar + currentYChar;
 
         if (costTable[j][i] == costTable[j-1][i-1] + sap.getCost(key)) {
             buildPair.prependX(currentXChar).prependY(currentYChar);
@@ -110,5 +110,41 @@ public class StringAlignmentDP {
             buildPair.prependX('*').prependY(currentYChar);
             return buildBestPair(inputPair, buildPair, j - 1, i, costTable, sap);
         }
+    }
+
+    private static Pair buildBestPair(Pair inputPair, Pair buildPair, int j, int i, int[][] costTable, StringAlignmentParser sap) {
+
+        while (i != 0 && j != 0) {
+            int goLeftCost = Integer.MIN_VALUE;
+            int goUpCost = Integer.MIN_VALUE;
+
+            char currentXChar = '*';
+            char currentYChar = '*';
+
+            if(i >= 1 && j >= 0) {
+                currentXChar = inputPair.getX().charAt(i - 1);
+                goLeftCost = costTable[j][i - 1];
+            }
+            if(j >= 1 && i >= 0) {
+                currentYChar = inputPair.getY().charAt(j - 1);
+                goUpCost = costTable[j-1][i];
+            }
+
+            String key = "" + currentXChar + currentYChar;
+
+            if (costTable[j][i] == costTable[j-1][i-1] + sap.getCost(key)) {
+                buildPair.prependX(currentXChar).prependY(currentYChar);
+                i--;
+                j--;
+            } else if (goLeftCost >= goUpCost) {
+                buildPair.prependX(currentXChar).prependY('*');
+                i--;
+            } else {
+                buildPair.prependX('*').prependY(currentYChar);
+                j--;
+            }
+        }
+
+        return buildPair;
     }
 }
