@@ -114,7 +114,7 @@ public class StringAlignmentDP {
 
     private static Pair buildBestPair(Pair inputPair, Pair buildPair, int j, int i, int[][] costTable, StringAlignmentParser sap) {
 
-        while (i != 0 && j != 0) {
+        while (!(i == 0 && i == 0)) {
             int goLeftCost = Integer.MIN_VALUE;
             int goUpCost = Integer.MIN_VALUE;
 
@@ -132,14 +132,22 @@ public class StringAlignmentDP {
 
             String key = "" + currentXChar + currentYChar;
 
-            if (costTable[j][i] == costTable[j-1][i-1] + sap.getCost(key)) {
-                buildPair.prependX(currentXChar).prependY(currentYChar);
-                i--;
-                j--;
+            if (i > 0 && j > 0) {
+                if (costTable[j][i] == costTable[j-1][i-1] + sap.getCost(key)) {
+                    buildPair.prependX(currentXChar).prependY(currentYChar);
+                    i--;
+                    j--;
+                } else if (goLeftCost >= goUpCost) {
+                    buildPair.prependX(currentXChar).prependY('*');
+                    i--;
+                } else if (goLeftCost <= goUpCost){
+                    buildPair.prependX('*').prependY(currentYChar);
+                    j--;
+                }
             } else if (goLeftCost >= goUpCost) {
                 buildPair.prependX(currentXChar).prependY('*');
                 i--;
-            } else {
+            } else if (goLeftCost <= goUpCost){
                 buildPair.prependX('*').prependY(currentYChar);
                 j--;
             }
