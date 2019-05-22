@@ -49,6 +49,14 @@ public class StringAlignmentDP {
 
         for(Pair pair : wordPairs){
             int[][] costTable = makeTable(pair.getX(), pair.getY(), parser);
+
+            for (int y = 0; y < costTable.length; y++) {
+                for (int x = 0; x < costTable[y].length; x++) {
+                    System.out.print("[" + costTable[y][x] + "] \t");
+                }
+                System.out.println();
+            }
+
             Pair bestPair = buildBestPair(pair, new Pair("", ""), pair.getY().length(), pair.getX().length(), costTable, parser);
             System.out.println(bestPair.getX() + " " + bestPair.getY());
         }
@@ -112,37 +120,55 @@ public class StringAlignmentDP {
         }
     }
 
-    private static Pair buildBestPair(Pair inputPair, Pair buildPair, int j, int i, int[][] costTable, StringAlignmentParser sap) {
+    private static Pair buildBestPair(Pair inputPair, Pair buildPair, int y, int x, int[][] costTable, StringAlignmentParser sap) {
 
-        while (!(i == 0 && i == 0)) {
+        while (!(x == 0 && y == 0)) {
             int goLeftCost = Integer.MIN_VALUE;
             int goUpCost = Integer.MIN_VALUE;
-            boolean atEdge = (i*j == 0);
+            int diagCost = Integer.MIN_VALUE;
+            int currentCost = Integer.MIN_VALUE;
+            boolean atEdge = (x <= 0 || y <= 0);
 
-            char currentXChar = '*';
-            char currentYChar = '*';
+            char currentXChar = ' ';
+            char currentYChar = ' ';
 
-            if(i >= 1 && j >= 0) {
-                currentXChar = inputPair.getX().charAt(i - 1);
-                goLeftCost = costTable[j][i - 1];
+            if(x > 0 && y >= 0) {
+                currentXChar = inputPair.getX().charAt(x-1);
+                goLeftCost = costTable[y][x - 1];
             }
-            if(j >= 1 && i >= 0) {
-                currentYChar = inputPair.getY().charAt(j - 1);
-                goUpCost = costTable[j-1][i];
+            if(y > 0 && x >= 0) {
+                currentYChar = inputPair.getY().charAt(y-1);
+                goUpCost = costTable[y-1][x];
             }
 
             String key = "" + currentXChar + currentYChar;
+            boolean isDiagonal = false;
+            if (!atEdge) {
+                isDiagonal = costTable[y][x] == costTable[y-1][x-1] + sap.getCost(key);
+                diagCost = costTable[y-1][x-1];
+            }
 
-            if (!atEdge && costTable[j][i] == costTable[j-1][i-1] + sap.getCost(key)) {
+            if (x >= 0 && y >= 0 ) currentCost = costTable[y][x];
+
+            boolean isLeft = currentCost - goLeftCost == sap.getCost("*");
+            boolean isUp =  currentCost - goUpCost == sap.getCost("*");
+
+            int max = Math.max(diagCost, Math.max(goUpCost, goLeftCost));
+
+            if (isDiagonal) {
                 buildPair.prependX(currentXChar).prependY(currentYChar);
-                i--;
-                j--;
-            } else if (goLeftCost >= goUpCost) {
+                x--;
+                y--;
+            } else if (goLeftCost == max) {
                 buildPair.prependX(currentXChar).prependY('*');
-                i--;
-            } else if (goLeftCost <= goUpCost){
+                x--;
+            }else if (diagCost == max) {
+                buildPair.prependX(currentXChar).prependY(currentYChar);
+                x--;
+                y--;
+            } else if (goUpCost == max) {
                 buildPair.prependX('*').prependY(currentYChar);
-                j--;
+                y--;
             }
         }
 
