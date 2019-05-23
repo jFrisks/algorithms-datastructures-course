@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7ad37ec6-5169-419a-97b5-eec673bbbc60" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/5gorilla/src/StringAlignmentParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/5gorilla/src/StringAlignmentParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/5gorilla/data/secret/2med.ans" beforeDir="false" afterPath="$PROJECT_DIR$/5gorilla/data/secret/2med.ans" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,22 +86,36 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="2" />
+          <entry key="ans" value="7" />
+          <entry key="in" value="6" />
+          <entry key="java" value="10" />
+          <entry key="py" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="2" />
+          <entry key="JAVA" value="10" />
+          <entry key="PLAIN_TEXT" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="35" />
+          <entry key="ans" value="74" />
+          <entry key="gitignore" value="1" />
+          <entry key="in" value="466" />
+          <entry key="java" value="4327" />
+          <entry key="txt" value="195" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="35" />
+          <entry key="JAVA" value="4327" />
+          <entry key="PLAIN_TEXT" value="736" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.vcs.git.usages">
+        <counts>
+          <entry key="git.branch.create.new" value="1" />
         </counts>
       </usages-collector>
     </session>
@@ -109,10 +123,67 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/src/ClosestPair.java">
+        <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="48" selection-end-column="5" />
+            <state relative-caret-position="659">
+              <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1289#1290#0" expanded="true" />
+                <element signature="e#1321#1322#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-658">
+              <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/2med.ans">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="189">
+              <caret line="9" column="209" selection-start-line="9" selection-start-column="209" selection-end-line="9" selection-end-column="209" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/3large.ans">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/5gorilla/output_validator/output_validator.py">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/5gorilla/src/Pair.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="231">
+              <caret line="13" selection-start-line="13" selection-end-line="13" />
+              <folding>
+                <element signature="e#231#232#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/5gorilla/src/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="11" column="81" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -121,55 +192,7 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="609">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="252">
-              <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/1small.ans">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/2med.ans">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/2med.in">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/0mini.ans">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/0mini.in">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/data/sample/2.ans">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/4closestpair/data/sample/2.in">
+        <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/1small.ans">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -189,6 +212,30 @@
       <find>UnvisitedDistQueue</find>
       <find>System.out.println</find>
       <find>contains</find>
+      <find>aa</find>
+      <find>BB</find>
+      <find>NN</find>
+      <find>NZ</find>
+      <find>AZ</find>
+      <find>AN</find>
+      <find />
+      <find>ZZ</find>
+      <find>AM</find>
+      <find>ARFQB*TQZMBSMTFMTYTBCFVCWDYTRV*EM*YIISLMSWXWPENICCXWPXTYNXLPMCXRHHSCVDH*NKBBZAQZ*MHMPSKSXWKPZVRXVWP*ZRVXNP</find>
+      <find>ARFQBBTQZMBSMTFMT*TBCFVCWDYTRVVEMMYIISLMSWXWPENICCXWPXTYNXLPMCXRHHSCVDHHNKBBZAQZZM*MPSKS*WKPZVRXVWPPZRVXNP</find>
+      <find>ARFQBYTQZMBSNTFMT*TBCFGCWDYTRVHEMWYIIVLMSWXWPENIDCXWPXTYNXLPMCXRHHSCVDHHNKBBZAQZAMMPSKS*WKPZVRXVWPMZRVXVP</find>
+      <find>HM</find>
+      <find>ARFQBYTQZMBSNTFMT*TBCFGCWDYTRVHEMWYIIVLMSWXWPENIDCXWPXTYNXLPMCXRHHSCVDHHNKBBZAQZAM*MPSKS*WKPZVRXVWPMZRVXVP</find>
+      <find>ARFQB*TQZMBSMTFMTYTBCFVCWDYTRV*EM*YIISLMSWXWPENICCXWPXTYNXLPMCXRHHSCVD*HNKBBZAQZ*MHMPSKSXWKPZVRXVWP*ZRVXNP</find>
+      <find>KFG*BQLIBW*CIYTTN*BEFNRIZALIQP*VBS*BWNI*KTATQERQMBRRBESZFTQCQKCHE*BYRQXKLQNCQMPRCYNFHFPKDTHFNAETTSHH*ELF*SQMV</find>
+      <find>KFGGBQLIBWWCIYTTNNBEFNRIZALIQPPVBSSBWNIIKTATQERQMBR*BESZFTQCQKCHEEBYRQXKLQNCQMPRCYNFHFPKDTHFNAETTSHHHELFFSQMV</find>
+      <find>XZ</find>
+      <find>KFGPBQLIBWTCIYTTNYBEFNRAZALIQPGVBSLBWNICKTATQERQMBY*BESZFTCCQKCHEBBYRQXKLQNCCMPRCYNFHFPKDTHFNAETTSHHYELFHSQMV</find>
+      <find>SLSMVLTMECYTINESLKDGHBZFEYEDSSISDTTRERLRV*XCPVKHTEPSSAPDKQMEIGPKYSFH*DDVFISHD*Q*YCBYPQDAWPDWRTFGRNTFMFCW</find>
+      <find>YWWDFIXBDNNFNLS*KMCTVMDMPBLAHDWDZQWLNCMWXAGGSSVZFZFXHYIWHNQHBDBVABAPSBIYKPDKKNDKQCKX*AZLSDKNGXGGYBXWST</find>
+      <find>ARFQB*TQZMBSMTFMTYTBCFVCWDYTRV*EM*YIISLMSWXWPENICCXWPXTYNXLPMCXRHHSCVD*HNKBBZAQZMHMPSKSXWKPZVRXVWP*ZRVXNP ARFQBYTQZMBSNTFMT*TBCFGCWDYTRVHEMWYIIVLMSWXWPENIDCXWPXTYNXLPMCXRHHSCVDHHNKBBZAQZAMMPSKS*WKPZVRXVWPMZRVXVP</find>
+      <find>SL**VLTMECYTINESLKDGHBZFEYED*SISDTTRERLRVXVCPVKHTEP*SAPDKQMEIGPKYSFHNDDVFISHDPQYYCBYPPDAWPDWRQFGRNTLMFCW SLSMVLTMECYTINESLKDGHBZFEYEDSSISDTTRERLRV*XCPVKHTEPSSAPDKQMEIGPKYSFH*DDVFISHD*Q*YCBYPQDAWPDWRTFGRNTFMFCW</find>
+      <find>ARFQBT*QZMBSMTFMTYTBCFVCWDYTRVE*MY*IISLMSWXWPENIC*CXWPXTYNXLPMCXRHHSCVDHN*KBBZAQZM*HM*PSKSXWKPZVRXVWPZ*RVXNP ARFQBYTQZMBSNTFMTT*BCFGCWDYTRVHEMWYIIVLMSWXWPENIDC*XWPXTYNXLPMCXRHHSCVDHHNKBBZAQZAM**MPSKSW*KPZVRX</find>
     </findStrings>
     <replaceStrings>
       <replace>UnvisitedQueue</replace>
@@ -196,6 +243,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -214,10 +266,15 @@
         <option value="$PROJECT_DIR$/4closestpair/report.tex" />
         <option value="$PROJECT_DIR$/3makingfriends/src/Main.java" />
         <option value="$PROJECT_DIR$/4closestpair/src/PointInt.java" />
-        <option value="$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/4closestpair/src/ClosestPair.java" />
+        <option value="$PROJECT_DIR$/5gorilla/data/sample/cutom.in" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/5gorilla/data/sample/custom.in" />
+        <option value="$PROJECT_DIR$/5gorilla/src/Pair.java" />
         <option value="$PROJECT_DIR$/5gorilla/src/StringAlignmentParser.java" />
+        <option value="$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java" />
+        <option value="$PROJECT_DIR$/5gorilla/src/Main.java" />
+        <option value="$PROJECT_DIR$/5gorilla/data/secret/2med.ans" />
       </list>
     </option>
   </component>
@@ -245,21 +302,23 @@
           <expand>
             <path>
               <item name="algorithms-datastructures-course" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4closestpair" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="algorithms-datastructures-course" type="b2602c69:ProjectViewProjectNode" />
-              <item name="4closestpair" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="algorithms-datastructures-course" type="b2602c69:ProjectViewProjectNode" />
               <item name="5gorilla" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="algorithms-datastructures-course" type="b2602c69:ProjectViewProjectNode" />
               <item name="5gorilla" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="algorithms-datastructures-course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="5gorilla" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="secret" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="algorithms-datastructures-course" type="b2602c69:ProjectViewProjectNode" />
+              <item name="5gorilla" type="462c0819:PsiDirectoryNode" />
+              <item name="output_validator" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -274,7 +333,7 @@
     <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558343829262" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1558507431607" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Groovy JUnit" value="groovy.util.GroovyTestCase" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
@@ -285,7 +344,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -304,6 +363,117 @@
       <recent name="$PROJECT_DIR$/3makingfriends" />
     </key>
   </component>
+  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
+    <UpdatedFiles>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Updated from server" />
+        <option name="myStatusName" value="Changed on server" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="CHANGED_ON_SERVER" />
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Updated" />
+          <option name="myStatusName" value="Changed" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/5gorilla/src/Main.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java</PATH>
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Created" />
+          <option name="myStatusName" value="Created" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="CREATED" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Deleted" />
+          <option name="myStatusName" value="Deleted" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="true" />
+          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
+        </FILE-GROUP>
+        <FILE-GROUP>
+          <option name="myUpdateName" value="Restored" />
+          <option name="myStatusName" value="Will be restored" />
+          <option name="mySupportsDeletion" value="false" />
+          <option name="myCanBeAbsent" value="false" />
+          <option name="myId" value="RESTORED" />
+        </FILE-GROUP>
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Modified" />
+        <option name="myStatusName" value="Modified" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MODIFIED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Skipped" />
+        <option name="myStatusName" value="Skipped" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SKIPPED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with conflicts" />
+        <option name="myStatusName" value="Will be merged with conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_CONFLICTS" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with tree conflicts" />
+        <option name="myStatusName" value="Merged with tree conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged with property conflicts" />
+        <option name="myStatusName" value="Will be merged with property conflicts" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Merged" />
+        <option name="myStatusName" value="Will be merged" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="MERGED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Not in repository" />
+        <option name="myStatusName" value="Not in repository" />
+        <option name="mySupportsDeletion" value="true" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="UNKNOWN" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally added" />
+        <option name="myStatusName" value="Locally added" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_ADDED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Locally removed" />
+        <option name="myStatusName" value="Locally removed" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="LOCALLY_REMOVED" />
+      </FILE-GROUP>
+      <FILE-GROUP>
+        <option name="myUpdateName" value="Switched" />
+        <option name="myStatusName" value="Switched" />
+        <option name="mySupportsDeletion" value="false" />
+        <option name="myCanBeAbsent" value="false" />
+        <option name="myId" value="SWITCHED" />
+      </FILE-GROUP>
+    </UpdatedFiles>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -316,7 +486,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ClosestPair">
+  <component name="RunManager" selected="Application.Main (2)">
     <configuration name="ClosestPair" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ClosestPair" />
       <module name="4closestpair" />
@@ -327,6 +497,13 @@
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="3makingfriends" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="5gorilla" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -342,16 +519,6 @@
       <module name="2wordladders" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="BFSTest" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BFSTest.testRun" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="2wordladders" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="BFSTest" />
-      <option name="METHOD_NAME" value="testRun" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -404,19 +571,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.BFSTest.testRun" />
       <item itemvalue="JUnit.BFSTest" />
       <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main (1)" />
       <item itemvalue="Application.ClosestPair" />
+      <item itemvalue="Application.Main (2)" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.ClosestPair" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.BFSTest" />
-        <item itemvalue="JUnit.BFSTest.testRun" />
       </list>
     </recent_temporary>
   </component>
@@ -443,7 +610,7 @@
       <workItem from="1557732675695" duration="14128000" />
       <workItem from="1557822234257" duration="7001000" />
       <workItem from="1558269419791" duration="1764000" />
-      <workItem from="1558343425403" duration="259000" />
+      <workItem from="1558343425403" duration="44001000" />
     </task>
     <task id="LOCAL-00001" summary="Added project structure">
       <created>1554451265350</created>
@@ -676,7 +843,77 @@
       <option name="project" value="LOCAL" />
       <updated>1558333973490</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="Created pairs">
+      <created>1558343890915</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1558343890917</updated>
+    </task>
+    <task id="LOCAL-00035" summary="Created Main and fixed parsing">
+      <created>1558354214552</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1558354214554</updated>
+    </task>
+    <task id="LOCAL-00036" summary="Created Main and fixed parsing">
+      <created>1558355124745</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1558355124745</updated>
+    </task>
+    <task id="LOCAL-00037" summary="Created Main and fixed parsing">
+      <created>1558355445476</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1558355445476</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Fixed map key values">
+      <created>1558363739029</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1558363739029</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Created Main and fixed parsing">
+      <created>1558447222363</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1558447222363</updated>
+    </task>
+    <task id="LOCAL-00040" summary="Updated algorithm to not use recursion">
+      <created>1558449682501</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1558449682501</updated>
+    </task>
+    <task id="LOCAL-00041" summary="Fixed algorithm, but it is now awfully ugly">
+      <created>1558451227333</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1558451227333</updated>
+    </task>
+    <task id="LOCAL-00042" summary="Fixed algorithm, hopefully">
+      <created>1558452228971</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1558452228971</updated>
+    </task>
+    <task id="LOCAL-00043" summary="Fixed algorithm, hopefully it works">
+      <created>1558507443417</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1558507443417</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -709,7 +946,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95726000" />
+    <option name="totallyTimeSpent" value="139468000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -726,13 +963,13 @@
       <window_info anchor="bottom" id="Flutter Performance" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891566" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" weight="0.32891566" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.3987952" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49928468" visible="true" weight="0.17199017" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.3980344" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32891566" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.3280098" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007153" side_tool="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.28674698" />
       <window_info anchor="bottom" id="Messages" order="11" sideWeight="0.49928468" weight="0.32891566" />
@@ -751,40 +988,40 @@
       <window_info anchor="right" id="Maven Projects" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info id="Image Layers" order="0" />
-      <window_info id="Favorites" order="1" side_tool="true" />
-      <window_info id="Capture Tool" order="2" />
-      <window_info id="UI Designer" order="3" />
-      <window_info id="Designer" order="4" />
-      <window_info active="true" content_ui="combo" id="Project" order="5" visible="true" weight="0.16666667" />
-      <window_info id="Structure" order="6" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17310444" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Capture Tool" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Sequence" order="0" />
-      <window_info anchor="bottom" id="Event Log" order="1" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" order="2" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Messages" order="3" weight="0.32923833" />
-      <window_info anchor="bottom" id="Version Control" order="4" />
-      <window_info anchor="bottom" id="Flutter Performance" order="5" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="6" weight="0.32923833" />
-      <window_info anchor="bottom" id="Message" order="7" />
-      <window_info anchor="bottom" id="Find" order="8" weight="0.32923833" />
-      <window_info anchor="bottom" id="Run" order="9" visible="true" weight="0.31941032" />
-      <window_info anchor="bottom" id="Debug" order="10" weight="0.39312038" />
-      <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="13" />
-      <window_info anchor="right" id="Capture Analysis" order="0" />
-      <window_info anchor="right" id="Flutter Inspector" order="1" />
-      <window_info anchor="right" id="CodeMR" order="2" weight="0.3297568" />
-      <window_info anchor="right" id="Flutter Outline" order="3" />
-      <window_info anchor="right" id="CodeMR Metrics" order="4" weight="0.3297568" />
-      <window_info anchor="right" id="Database" order="5" weight="0.3297568" />
-      <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="right" id="Theme Preview" order="7" />
-      <window_info anchor="right" id="Maven Projects" order="8" weight="0.3297568" />
-      <window_info anchor="right" id="Palette" order="9" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="10" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="11" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="12" weight="0.25" />
+      <window_info anchor="bottom" id="Flutter Performance" order="1" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="2" />
+      <window_info anchor="bottom" id="Find" order="3" weight="0.32891566" />
+      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49928468" visible="true" weight="0.3280098" />
+      <window_info anchor="bottom" id="Debug" order="5" weight="0.3980344" />
+      <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="8" />
+      <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3280098" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.32891566" />
+      <window_info anchor="bottom" id="Version Control" order="12" weight="0.28674698" />
+      <window_info anchor="bottom" id="Messages" order="13" sideWeight="0.49928468" weight="0.32891566" />
+      <window_info anchor="right" id="Flutter Inspector" order="0" />
+      <window_info anchor="right" id="CodeMR" order="1" />
+      <window_info anchor="right" id="Flutter Outline" order="2" />
+      <window_info anchor="right" id="CodeMR Metrics" order="3" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="4" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="5" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="6" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="7" />
+      <window_info anchor="right" id="Capture Analysis" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Palette&#9;" order="10" />
+      <window_info anchor="right" id="Database" order="11" />
+      <window_info anchor="right" id="Maven Projects" order="12" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -794,13 +1031,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="BFS algo done. We need to fix output." />
-    <MESSAGE value="BFS algo first version completed. Added getPathLength() and break at finish-find" />
-    <MESSAGE value="Ctreated test for BFS and corrected small change in BFS" />
-    <MESSAGE value="Created basestructure for parser and its bufferedreader" />
-    <MESSAGE value="Static and private for bfs run" />
-    <MESSAGE value="Added parse method. GraphCreate is still not implemented." />
-    <MESSAGE value="Added base of createGraph-method." />
     <MESSAGE value="Everything seem to be working. Added Pairs with start and finish. Changed Map&lt;String, List&gt; to List&lt;Pairs&gt;. Easy to iterate over the pairs so everything gets in right order." />
     <MESSAGE value="Made outputwriter faster ;)" />
     <MESSAGE value="Wrote new faster parser with O(n) instead of O(n^2).&#10;Creates subsets wiht length (l-1) of all words, with length l. &#10;Actual timecomplexity is O(C*l*n), where n is words and l is word length, c is coeff. &#10;Could be even faster if we do more in each loop - but readability..." />
@@ -819,7 +1049,14 @@
     <MESSAGE value="Updated for loop, theoretically to half the constant time complexity. But not noticeable. Compiler does it job..." />
     <MESSAGE value="Write more compact code for sort methods etc" />
     <MESSAGE value="Code Frame for next lab" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Frame for next lab" />
+    <MESSAGE value="Created pairs" />
+    <MESSAGE value="Fixed map key values" />
+    <MESSAGE value="Created Main and fixed parsing" />
+    <MESSAGE value="Updated algorithm to not use recursion" />
+    <MESSAGE value="Fixed algorithm, but it is now awfully ugly" />
+    <MESSAGE value="Fixed algorithm, hopefully" />
+    <MESSAGE value="Fixed algorithm, hopefully it works" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed algorithm, hopefully it works" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -848,74 +1085,91 @@
           <properties />
           <option name="timeStamp" value="22" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java</url>
+          <line>81</line>
+          <properties />
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java</url>
+          <line>84</line>
+          <properties />
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java</url>
+          <line>152</line>
+          <properties />
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
       </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
     </breakpoint-manager>
   </component>
   <component name="debuggerHistoryManager">
     <expressions id="breakpointCondition">
       <expression>
-        <expression-string>outputTree.size() == 42</expression-string>
+        <expression-string>x == 100</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>x == 90</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>x == 85</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>x == 78</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>i == 78</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>i == 77</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>i == 76</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>i == 75</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>i == 73</expression-string>
+        <language-id>JAVA</language-id>
+        <evaluation-mode>EXPRESSION</evaluation-mode>
+      </expression>
+      <expression>
+        <expression-string>j == 0</expression-string>
         <language-id>JAVA</language-id>
         <evaluation-mode>EXPRESSION</evaluation-mode>
       </expression>
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/2wordladders/data/secret/6large2.in">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2wordladders/data/secret/4medium2.in">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2wordladders/data/secret/4medium2.ans">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2wordladders/data/secret/3medium1.ans">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2wordladders/data/secret/5large1.in">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2wordladders/report.tex">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9">
-          <caret line="20" column="251" selection-start-line="20" selection-start-column="251" selection-end-line="20" selection-end-column="251" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2wordladders/src/BFSTest.java" />
-    <entry file="file://$PROJECT_DIR$/2wordladders/src/ParserTest.java" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3makingfriends/data/sample/2.in">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="1" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3makingfriends/data/sample/2.ans">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3makingfriends/data/sample/1.ans">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3makingfriends/data/sample/1.in">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/3makingfriends/src/Edge.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/3makingfriends/src/EdgeComparator.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -946,13 +1200,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret column="12" lean-forward="true" selection-start-column="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/2wordladders/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="9" column="81" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="81" />
         </state>
       </provider>
     </entry>
@@ -1048,7 +1295,6 @@
     <entry file="file://$PROJECT_DIR$/3makingfriends/report.tex">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java" />
     <entry file="file://$PROJECT_DIR$/_config.yml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -1064,42 +1310,151 @@
     <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/2med.ans">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/2med.in">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/0mini.ans">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/0mini.in">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/4closestpair/data/sample/2.ans">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/4closestpair/data/sample/2.in">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/src/Pairs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/0mini.in">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/0mini.ans">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/4closestpair/data/secret/2med.in">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="609">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        <state relative-caret-position="184">
+          <caret line="13" column="6" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/4closestpair/src/ClosestPair.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="48" selection-end-column="5" />
+        <state relative-caret-position="-1719">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk-10.0.2.jdk/Contents/Home/lib/src.zip!/java.base/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="556" selection-start-line="556" selection-end-line="556" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/0mini.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="25" column="12" selection-start-line="25" selection-start-column="12" selection-end-line="25" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/data/sample/custom.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="7" column="15" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/1small.in">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/2wordladders/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-24">
+          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/4huge.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="17" column="67" lean-forward="true" selection-start-line="17" selection-start-column="67" selection-end-line="17" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/src/Pair.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+          <folding>
+            <element signature="e#231#232#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/2med.in">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="259">
+          <caret line="28" column="76" selection-start-line="28" selection-start-column="76" selection-end-line="28" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/0mini.ans">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+        <state relative-caret-position="659">
+          <caret line="38" column="9" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1289#1290#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="11" column="81" selection-start-line="11" selection-start-column="81" selection-end-line="11" selection-end-column="81" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/src/StringAlignmentDP.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-658">
+          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/output_validator/output_validator.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/3large.ans">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/1small.ans">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/5gorilla/data/secret/2med.ans">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="189">
+          <caret line="9" column="209" selection-start-line="9" selection-start-column="209" selection-end-line="9" selection-end-column="209" />
         </state>
       </provider>
     </entry>

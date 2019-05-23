@@ -37,8 +37,6 @@ public class StringAlignmentParser {
         for (int i = characters.length*characters.length + 1; i < in.length - 1; i = i + 2) {
             wordPairs.add(new Pair(in[i], in[i + 1]));
         }
-
-        System.out.println(combination);
     }
 
     public int getCost(String key) {

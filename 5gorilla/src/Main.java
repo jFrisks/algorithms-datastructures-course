@@ -8,7 +8,8 @@ public class Main {
     public static void main(String[] args) {
         BufferedReader br = null;
         try {
-            br = new BufferedReader(new FileReader("./5gorilla/data/secret/0mini.in"));
+            //br = new BufferedReader(new FileReader("./5gorilla/data/sample/custom.in"));
+            br = new BufferedReader(new FileReader("./5gorilla/data/secret/1small.in"));
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
