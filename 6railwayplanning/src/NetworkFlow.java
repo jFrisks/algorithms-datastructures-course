@@ -14,14 +14,15 @@ public class NetworkFlow {
         List<Node> path = getShortestPath(graph);;
 
         while (path != null) {
-            System.out.println(path);
 
             Queue<Edge> edgePath = pathToEdges(path);
-            System.out.println(edgePath);
 
             int maxCapacity = pathMaxCapacity(edgePath);
-            System.out.println(maxCapacity);
             flow = flow + maxCapacity;
+
+            /*System.out.println(path);
+            System.out.println(maxCapacity);
+            System.out.println(edgePath);*/
 
             updatePathFlow(edgePath, maxCapacity);
 
