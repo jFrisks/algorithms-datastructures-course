@@ -84,7 +84,7 @@ public class Graph {
         return removeRoutes;
     }
 
-    public int getFlow() {
+    public int getMinimalFlow() {
         return flow;
     }
 

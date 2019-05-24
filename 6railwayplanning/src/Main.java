@@ -1,53 +1,65 @@
-import com.sun.jdi.Value;
-import javafx.scene.chart.ValueAxis;
-
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.List;
 
 public class Main {
 
+    static int bestFlow = 5;
+    static int bestAmountDeleted = 5;
     public static void main(String[] args) throws IOException {
         Parser parser = new Parser();
 
         BufferedReader br;
 
-        br = new BufferedReader(new FileReader("./6railwayplanning/data/secret/3large.in"));
+        br = new BufferedReader(new FileReader("./6railwayplanning/data/secret/1small.in"));
         //br = new BufferedReader(new InputStreamReader(System.in));
 
         Graph graph = parser.parse(br);
-        testDeleteRoutes(graph, graph.getRemoveRoutes().size()/2);
+        int bestFlow = 0;
+        int bestAmountDeleted = 0;
 
-        //System.out.println("without: " + flowWithoutRoutes(graph, 15));
-        //NetworkFlow nf = new NetworkFlow(graph);
-        //System.out.println("flow: " + nf.calculateFlow());
-    }
-
-    private static void testDeleteRoutes(Graph graph, int range) {
-
-        ValueNode node = makeBST(0, range);
-        System.out.println(node);
-    }
-
-
-    //private static void testDeleteRoutes(Graph graph, int range, int lastFlow) {}
-
-    private static ValueNode makeBST(int start, int end) {
-        int median = (end - start)/2;
-
-        System.out.println(end - start);
-        if (end - start <= 1) {
-            return new ValueNode<Integer, ValueNode, ValueNode>(median, null, null);
+        int rangeSize = graph.getRemoveRoutes().size();
+        int[] rangeArr = new int[rangeSize];
+        for(int i = 0; i < rangeSize; i++){
+            rangeArr[i] = i;
         }
 
-        ValueNode node = new ValueNode<Integer, ValueNode, ValueNode>(median, makeBST(start, median), makeBST(median, end));
-
-        return node;
+        binarysearchWithNetoworflow(rangeArr, 0, rangeArr.length-1, graph);
+        System.out.println(bestAmountDeleted + " " + bestFlow);
     }
 
-    private static int flowWithoutRoutes(Graph graph, double range) {
+
+    private static int binarysearchWithNetoworflow(int[] arr, int left, int right, Graph graph){
+        //returning amountofroadsdeleted, mid.
+        //TODO: fixa bättre basfall - när listan är tom
+        if(right >= left){
+            int mid = left + (right-left)/2;
+            int flow = flowWithoutRoutes(graph, mid);
+            int minimalFlow = graph.getMinimalFlow();
+            if(flow  == minimalFlow) {
+                bestFlow = flow;
+                bestAmountDeleted = mid;
+                //TODO: is mid right or mid+1?
+                return bestAmountDeleted;
+            }
+            if(flow > minimalFlow){
+                //spara undan de bästa flow och deleted vi fått
+                bestFlow = flow;
+                bestAmountDeleted = mid;
+                //Ta högre halvan av arr och prova
+                return binarysearchWithNetoworflow(arr, mid+1, right, graph);
+
+            }
+            if(flow < minimalFlow){
+                //ta vänster halva
+                return binarysearchWithNetoworflow(arr, left, mid -1, graph);
+            }
+        }
+        return bestAmountDeleted;
+    }
+
+    private static int flowWithoutRoutes(Graph graph, int range) {
         Graph graphCopy = graph.copy();
         List<Edge> removeRoutes = graphCopy.getRemoveRoutes();
         NetworkFlow nf = new NetworkFlow(graphCopy);
