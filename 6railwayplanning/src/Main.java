@@ -12,7 +12,7 @@ public class Main {
 
         BufferedReader br;
 
-        br = new BufferedReader(new FileReader("./6railwayplanning/data/secret/1small.in"));
+        br = new BufferedReader(new FileReader("./6railwayplanning/data/secret/4huge.in"));
         //br = new BufferedReader(new InputStreamReader(System.in));
 
         Graph graph = parser.parse(br);
@@ -26,7 +26,6 @@ public class Main {
         }
 
         binarysearchWithNetoworflow(rangeArr, 0, rangeArr.length-1, graph);
-        System.out.println(bestAmountDeleted + " " + bestFlow);
     }
 
 
@@ -37,25 +36,30 @@ public class Main {
             int mid = left + (right-left)/2;
             int flow = flowWithoutRoutes(graph, mid);
             int minimalFlow = graph.getMinimalFlow();
-            if(flow  == minimalFlow) {
+            /*if(flow  == minimalFlow) {
                 bestFlow = flow;
                 bestAmountDeleted = mid;
                 //TODO: is mid right or mid+1?
+                System.out.println(bestAmountDeleted + " " + bestFlow);
                 return bestAmountDeleted;
-            }
-            if(flow > minimalFlow){
+            }*/
+            if(flow >= minimalFlow){
                 //spara undan de bästa flow och deleted vi fått
                 bestFlow = flow;
                 bestAmountDeleted = mid;
                 //Ta högre halvan av arr och prova
+                System.out.println(bestAmountDeleted + " " + bestFlow);
                 return binarysearchWithNetoworflow(arr, mid+1, right, graph);
 
             }
             if(flow < minimalFlow){
                 //ta vänster halva
+                System.out.println(bestAmountDeleted + " " + bestFlow);
                 return binarysearchWithNetoworflow(arr, left, mid -1, graph);
             }
         }
+
+        System.out.println(bestAmountDeleted + " " + bestFlow);
         return bestAmountDeleted;
     }
 
