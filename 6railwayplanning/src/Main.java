@@ -1,3 +1,6 @@
+import com.sun.jdi.Value;
+import javafx.scene.chart.ValueAxis;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,8 +14,8 @@ public class Main {
 
         BufferedReader br;
 
-        //br = new BufferedReader(new FileReader("./6railwayplanning/data/secret/3large.in"));
-        br = new BufferedReader(new InputStreamReader(System.in));
+        br = new BufferedReader(new FileReader("./6railwayplanning/data/secret/3large.in"));
+        //br = new BufferedReader(new InputStreamReader(System.in));
 
         Graph graph = parser.parse(br);
         testDeleteRoutes(graph, graph.getRemoveRoutes().size()/2);
@@ -24,39 +27,24 @@ public class Main {
 
     private static void testDeleteRoutes(Graph graph, int range) {
 
-        int finalRange = 1;
-        double delta = range;
-        int flow = 0;
-        boolean isDone = false;
+        ValueNode node = makeBST(0, range);
+        System.out.println(node);
+    }
 
-        int[] trail = new int[]{-1,-2,-3};
-        int counter = 0;
-        while (!isDone) {
 
-            flow = flowWithoutRoutes(graph, range);
+    //private static void testDeleteRoutes(Graph graph, int range, int lastFlow) {}
 
-            delta = Math.round(delta/2);
+    private static ValueNode makeBST(int start, int end) {
+        int median = (end - start)/2;
 
-            //System.out.println(range + "±" +  delta);
-
-            if (flow < graph.getFlow()) {
-                range = (int)Math.round(range - delta);
-            } else if (flow > graph.getFlow()) {
-                range = (int)Math.round(range + delta);
-            }
-
-            trail[counter%3] = range;
-            isDone = trail[0] == trail[1] || trail[1] == trail[2] || trail[0] == trail[2];
-            //System.out.println("[" + trail[0] + "," + trail[1] + "," +  trail[2] + "]");
-
-            counter++;
+        System.out.println(end - start);
+        if (end - start <= 1) {
+            return new ValueNode<Integer, ValueNode, ValueNode>(median, null, null);
         }
 
-        int min = Integer.min(trail[0], Integer.min(trail[1], trail[2]));
+        ValueNode node = new ValueNode<Integer, ValueNode, ValueNode>(median, makeBST(start, median), makeBST(median, end));
 
-        flow = flowWithoutRoutes(graph, min);
-
-        System.out.println(min + " " + flow);
+        return node;
     }
 
     private static int flowWithoutRoutes(Graph graph, double range) {
